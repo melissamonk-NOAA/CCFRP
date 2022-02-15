@@ -3,6 +3,14 @@
 ### 2022 fishing season
 ### Melissa Monk
 #########################################################################
+
+---
+title: CCFRP Notebook
+output: html_notebook
+---
+
+
+
 rm(list = ls(all = TRUE))
 graphics.off()
 
@@ -10,30 +18,32 @@ library(RColorBrewer)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(kableExtra)
 
-setwd("C:/CCFRP/CCFRP_2007-2020_Database")
+setwd("C:/GitHub/CCFRP")
 
 #-------------------------------------------------------------------------------
 # Read in data and basic cleanup
 # Eventually open these directly in access, but it's not behaving
 # Extract excel files from the Access database
 # read in trip data
-trips <- readxl::read_xlsx("C:/CCFRP/CCFRP_2007-2020_Database/Trip.xlsx")
+trips <- read.csv("1-Trip Information.csv", fileEncoding="UTF-8-BOM")
 # read in drift data
-drifts_all <- readxl::read_xlsx("C:/CCFRP/CCFRP_2007-2020_Database/Drift.xlsx")
+drifts_all <-read.csv("3-Drift Information.csv", fileEncoding="UTF-8-BOM")
 # read in catch data
-catches <- readxl::read_xlsx("C:/CCFRP/CCFRP_2007-2020_Database/Catch.xlsx")
-
+catches <- read.csv("4-Caught Fishes.csv", fileEncoding="UTF-8-BOM")
 #Species lookup
-Species <- readxl::read_xlsx(("C:/CCFRP/CCFRP_2007-2020_Database/FishSpecies.xlsx"))
+Species <- read.csv("Fish Species.csv", fileEncoding="UTF-8-BOM")
 Species <- Species %>%
-  rename(Species.Code = `Species Code`,
-         Common.Name = `Common Name`) %>%
   select(Species.Code, Common.Name, Rockfish)
 
+#Read in management groups
+Areas <- read.csv("Monitoring Areas.csv", fileEncoding="UTF-8-BOM")
+
+
 # read in the two GIS depth spreadsheets from Becky
-GIS.start.depth <- readxl::read_xlsx("C:/CCFRP/CCFRP_2007-2020_Database/CCFRP_Start_GIS_Depths.xlsx")
-GIS.end.depth <- readxl::read_xlsx("C:/CCFRP/CCFRP_2007-2020_Database/CCFRP_End_GIS_Depths.xlsx")
+GIS.start.depth <- readxl::read_xlsx("CCFRP_Start_GIS_Depths.xlsx")
+GIS.end.depth <- readxl::read_xlsx("CCFRP_End_GIS_Depths.xlsx")
 
 # columns have spaces - remove all spaces here
 trips <- trips %>% rename_all(make.names)
@@ -110,9 +120,11 @@ Drift_catches <- catches %>%
 # join drifts and catch info and make NA 0 where target species not observed
 dat <- left_join(Drift_catches, drifts)
 dat <- dat %>%
-  mutate(AREA = substring(Drift.ID, 1, 2)) %>%
+  mutate(Area.code = substring(Drift.ID, 1, 2)) %>%
   mutate(Effort = Total...Anglers.Fishing * Drift.Time..hrs.) %>%
   mutate(CPUE = n / Effort)
+
+dat <- left_join(dat, Areas)
 
 # Piedras blancas cells to drop
 # BL_drop = c('BL23', 'BL24','BL25', 'BL26', 'BL29', 'BL31',  'BL33', 'BL34', 'BL39', 'BL43', 'BL46')
@@ -132,24 +144,19 @@ levels(dat$Grid.Cell.ID)[levels(dat$Grid.Cell.ID) == "Bl51"] <- "BL51"
 # tables of grid cells and years
 # put AREAs north to south
 
-dat$AREA <- factor(dat$AREA, levels = c("CM", "TM", "SP", "BH", "AN", "PL", "BL", "PB", "AI", "CP", "SW", "LB", "LJ", 
-                      "BM", "FN", "TD" ,"PC")) #these are not in order but get removed
+#dat$AREA <- factor(dat$AREA, levels = c("CM", "TM", "SP", "BH", "AN", "PL", "BL", "PB", "AI", "CP", "SW", "LB", "LJ", 
+#                      "BM", "FN", "TD" ,"PC")) #these are not in order but get removed
  
 # List of AREAs to drop
 # TD, Trinidad - no mpa
 # FN, farallons, samples only 2 years
 # PC - error?
 dat <- dat %>%
-  filter(!(AREA %in% c("FN", "PC", "BM", NA))) %>%
+  filter(!(Area.code %in% c("FN", "PC", "BM", "LB", "TD"))) %>%
   droplevels
 
-with(dat, table(AREA))
+with(dat, table(Area.code))
 
-
-# tally the number of drifts in a grid cell
-grid_cells_per_AREA <- dat %>%
-  group_by(AREA, Grid.Cell.ID) %>%
-  tally()
 
 
 
@@ -158,6 +165,8 @@ grid_cells_per_AREA <- dat %>%
 # Give drifts within a cell on the same day a drift number
 # See how many drifts and total fished time
 Num_drifts_fished <- dat %>%
+  select(YEAR, Drift.ID, ID.Cell.per.Trip, Drift.Time..hrs.) %>%
+  unique() %>%
   group_by(YEAR, ID.Cell.per.Trip) %>%
   summarise(
     num.drifts = n(),
@@ -196,30 +205,109 @@ dat <- dat %>%
 # 'TD' = 'Trinidad',
 # 'TM' = 'TenMile')
 
+#-------------------------------------------------------------------------------
+# Figure out how many of each species we can collect during the 2022 season
+
 #Subset to just Reference areas since we can't take otoliths from MPAs
+#and only look at 2019-2021
+dat_species <- dat %>%
+  filter(SITE == 'REF',
+         YEAR > 2018) 
 
-dat <- subset(dat, SITE == 'REF')
+# southern_sites = c("AI", "CP", "LJ", "PC", "SW", "LB")
+# central_sites = c("AN", "PL", "PB", "BL")
+# northern_sites = c("BH", "CM","SP", "TD", "TM")
+# dat_species <- dat_species %>%
+#   mutate(CA_area = case_when(AREA %in% southern_sites ~ "South",
+#                              AREA %in% central_sites ~ "Central",
+#                              AREA %in% northern_sites ~ "North")) 
+# dat_species$CA_area = as.factor(dat_species$CA_area)
+# summary(dat_species$CA_area)
 
-
-## Raw cpue
-avg.cpue <- dat %>%
+## Get it down to the species there would be enough or or we're interested in
+total.fish <- dat_species %>%
   group_by(Common.Name) %>%
-  summarise(avg.cpue = mean(CPUE),
-            total = sum(n))
-write.csv(avg.cpue,"avg.cpue.csv")
+  summarise(total = sum(n)) %>%
+  filter(total > 50)
 
-# Plot the average cpue by year and reef
-# gg4 <- ggplot(aes(YEAR, avg.cpue, colour = as.factor(AREA)), data = avg.cpue.AREA) +
-#   geom_line(lwd = 1.05) +
-#   theme_bw() +
-#   labs(
-#     colour = "Area",
-#     x = "Year",
-#     y = "Raw average CPUE"
-#   )
-# gg4
-# ggsave(paste0(out.dir, "/Average CPUE by Year and SITE.png"),
-#   width = 6, height = 4,
-#   units = "in"
-# )
 
+
+
+dat_species <- dat_species %>%
+  filter(Common.Name %in% total.fish$Common.Name) %>%
+  filter(!(Common.Name %in% c("Yellowtail Rockfish",
+                              "Rosy Rockfish", 
+                             # "Kelp Rockfish" ,"Treefish", 
+                             # "Honeycomb Rockfish", 
+                              "Black-and-Yellow Rockfish",
+                              "Yelloweye Rockfish", "Calico Rockfish"))) 
+  
+
+fish_numbers <- dat_species %>%
+  group_by(Common.Name, Monitoring.Group, YEAR, Region) %>%
+  summarise(total_fish = sum(n),
+            avg_annual_cpue = mean(CPUE))# %>%
+  # group_by(Common.Name, CA_area) %>%
+  # summarise(avg_fish = mean(total_fish),
+  #           avg_cpue = mean(avg_annual_cpue)) %>%
+  # mutate(avg_fish = round(avg_fish,0))
+  # 
+
+####SOUTH
+south_data = subset(fish_numbers, Region =="South") %>%
+  filter(YEAR %in% c(2018, 2019, 2021)) 
+# Get the average number of fish by program per year
+south0 <- south_data %>%
+  group_by(Common.Name, Monitoring.Group) %>%
+  summarise(average_fish = mean(total_fish)) %>%
+  filter(average_fish > 4)
+
+#Get the percent of the fish collected by each program and multiply by 50 - goal or less
+#number of otoliths per species
+south_collections <- south0 %>%
+  group_by(Common.Name) %>%
+  summarise(total = sum(average_fish))
+south_collections <- left_join(south_collections, south0) %>%
+  mutate(num_to_collect =  if_else(total > 75, ceiling(((average_fish/total)*50)), 
+                                    ceiling(((average_fish/total)*(.6*total))))) #%>%
+
+
+#Check totals for each program to see how they fall out in terms of effort for collecting
+south_program_effort <- south_collections %>%
+  group_by(Monitoring.Group) %>%
+  summarise(total_fish_for_otoliths = sum(num_to_collect))
+
+
+#####NORTH
+north_data = subset(fish_numbers, Region!= "South")  %>%
+  filter(YEAR %in% c(2018, 2019, 2021)) 
+# Get the average number of fish collected over the last three years by program
+north0 <- north_data %>%
+  group_by(Common.Name, Monitoring.Group) %>%
+  summarise(average_fish = mean(total_fish)) %>%
+  filter(average_fish > 4)
+
+
+#Get the percent of the fish collected by each program and multiply by 60 - goal 
+#number of otoliths per species
+north_collections <- north0 %>%
+  group_by(Common.Name) %>%
+  summarise(total = sum(average_fish))
+north_collections <- left_join(north_collections, north0) %>%
+  mutate(num_to_collect =  if_else(total > 75, ceiling(((average_fish/total)*50)), 
+                                   ceiling(((average_fish/total)*(.6*total)))))
+
+#Check totals for each program to see how they fall out in terms of effort for collecting
+north_program_effort <- north_collections %>%
+  group_by(Monitoring.Group) %>%
+  summarise(total_fish_for_otoliths = sum(num_to_collect))
+
+program_effort = rbind(south_program_effort, north_program_effort)
+
+###Bind the collection numbers and make a table
+collections <- rbind(north_collections, south_collections) 
+collections_final <- collections %>%
+  select(Common.Name, Monitoring.Group, num_to_collect) %>%
+  pivot_wider(names_from = Monitoring.Group, values_from = num_to_collect, values_fill = 0) %>%
+  rowwise(Common.Name) %>%
+  mutate(Total = sum(c_across(BML:SIO)))
