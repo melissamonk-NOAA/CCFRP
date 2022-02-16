@@ -1,0 +1,14 @@
+RColorBrewer
+dplyr
+tidyr
+ggplot2
+kableExtra
+magrittr
+knitr
+usethis
+devtools
+ggridges
+stringr
+unikn
+viridisLite
+viridis
