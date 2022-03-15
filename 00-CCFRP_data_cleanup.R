@@ -87,8 +87,7 @@ drifts <- drifts_all %>%
     SDepth90mRes = na_if(SDepth90mRes, -9999),
     EDepth90mRes = na_if(EDepth90mRes, -9999)
   ) %>%
-  rename(SITE = Site..MPA..REF.) %>%
-  filter(!is.na(Drift.Time..hrs.))
+  rename(SITE = Site..MPA..REF.)
 
 # Need to change 7's to july and 8's to august
 drifts$Month[drifts$Month == 7] <- "July"
@@ -130,8 +129,32 @@ levels(dat$Grid.Cell.ID)[levels(dat$Grid.Cell.ID) == "Bl51"] <- "BL51"
 
 #-------------------------------------------------------------------------------
 # AREA filters
+
+area_counts <- dat %>%
+  ungroup() %>%
+  select(Trip.ID, YEAR, Name) %>%
+  unique() %>%
+  group_by(YEAR, Name) %>%
+  tally() %>%
+  pivot_wider(names_from = Name, values_from = n)
+
+cell_counts <- dat %>%
+  ungroup() %>%
+  select(Trip.ID, YEAR, Grid.Cell.ID) %>%
+  unique() %>%
+  group_by(YEAR, Grid.Cell.ID) %>%
+  tally() %>%
+  pivot_wider(names_from = Grid.Cell.ID, values_from = n)
+
+#Remove just the areas not sampled consistently
+#remove farralons, Point Conception,  trinidad, Laguna Beach, NA's 'BM" is data entry error
+#Also remove all cells with MM and RR - defited outside either the reference area or MPA cells
+cells_to_exclude <- c('MM', 'RR', 'MN', 'MO') 
 dat <- dat %>%
-  filter(!(Area.code %in% c("FN", "PC", "BM", "LB", "TD"))) %>%
+  filter(!(Area.code %in% c("FN", "PC", "BM", "LB", "TD", NA))) %>% 
+  filter(!grepl(sprintf('(%s)$', 
+                        paste0(cells_to_exclude, collapse = '|')), Grid.Cell.ID)) %>%
+  filter(!grepl("Exclude|across|outside",Excluded.Drift.Comment)) %>%
   droplevels
 
 with(dat, table(Area.code))
@@ -140,7 +163,7 @@ with(dat, table(Area.code))
 # Fish time filter
 # Give drifts within a cell on the same day a drift number
 # See how many drifts and total fished time
-Num_drifts_fished <- dat %>%
+Time_cell_fished <- dat %>%
   select(YEAR, Drift.ID, ID.Cell.per.Trip, Drift.Time..hrs.) %>%
   unique() %>%
   group_by(YEAR, ID.Cell.per.Trip) %>%
@@ -148,17 +171,16 @@ Num_drifts_fished <- dat %>%
     num.drifts = n(),
     tot_time = sum(Drift.Time..hrs.)
   )
-# cells fished at least 15 minutes
-Drift_time_keep <- Num_drifts_fished %>% filter(tot_time >= .25)
+# cells fished at least 2 minutes
+Drift_time_keep <- Time_cell_fished %>% filter(tot_time >= (10/60))
 
 # Remove cells fished less tan a total of 15 minutes on a day
 dat <- dat %>%
   filter(
-    ID.Cell.per.Trip %in% Drift_time_keep$ID.Cell.per.Trip,
-    `Drift.Time..hrs.` > 0.03333333
-  )
+    ID.Cell.per.Trip %in% Drift_time_keep$ID.Cell.per.Trip)
 
 
 
 # Save
 save.image(file = "CCFRP_cleanedup.RData")
+

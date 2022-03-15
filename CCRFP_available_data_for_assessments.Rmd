@@ -1,0 +1,134 @@
+---
+title: "California Collaborative Fisheries Research Program"
+subtitle: "Data availability for stock assessments"
+author: "Melissa H. Monk"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  bookdown::pdf_document2: 
+    keep_tex: true
+    keep_md: true
+toc: false
+header-includes:
+  - \usepackage{booktabs}
+  - \usepackage{longtable}
+  - \usepackage{array}
+  - \usepackage{multirow}
+  - \usepackage{wrapfig}
+  - \usepackage{float}
+  - \usepackage{colortbl}
+  - \usepackage{pdflscape}
+  - \usepackage{tabu}
+  - \usepackage{threeparttable}
+  - \usepackage[normalem]{ulem}
+  - \usepackage{makecell}
+  - \usepackage{xcolor}
+  - \usepackage{placeins}
+always_allow_html: true
+---
+
+
+```{r load-packages, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(devtools)
+library(dplyr)
+library(ggplot2)
+library(ggridges)
+library(stringr)
+library(tidyr)
+library(unikn)
+library(viridis)
+library(kableExtra)
+library(knitr)
+```
+
+
+```{r setup, echo = FALSE, include = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+
+setwd("C:/GitHub/CCFRP")
+
+#-------------------------------------------------------------------------------
+# Read in data and basic cleanup
+load("CCFRP_cleanedup.RData")
+#-------------------------------------------------------------------------------
+
+dat <- dat %>%
+ # mutate_at(vars(Monitoring.Group), as.factor) %>%
+  mutate(Monitoring.Group = factor(Monitoring.Group, levels = c( "MLML", "Cal Poly", "HSU", "BML", "UCSB", "SIO")))
+         
+         
+#Get the total angler hours by monitoring area
+effort_by_program <- dat %>%
+  ungroup() %>%
+  select(Drift.ID, YEAR, Effort, Total...Anglers.Fishing, Monitoring.Group, Name) %>%
+  unique() 
+
+total_effort <- effort_by_program %>%
+  select(Monitoring.Group, YEAR, Effort) %>%
+  group_by(Monitoring.Group, YEAR) %>%
+  summarise(tot_effort = sum(Effort)) %>%
+  pivot_wider(names_from = Monitoring.Group, values_from = tot_effort, values_fill = 0)
+```
+
+
+
+\newpage
+
+```{r anghrs, echo = FALSE, warning = FALSE, message = FALSE}
+#Look at the effort by year among the programs
+  knitr::kable(booktabs = T,
+    caption = "Total angler hours by institution summed across all active years.",
+  effort_by_program %>%
+  select(Monitoring.Group, YEAR,  Effort) %>%
+  group_by(Monitoring.Group, YEAR) %>%
+  summarise(Total_AnglerHours = round(sum(Effort),0)) %>%
+  pivot_wider(id_cols = YEAR, names_from = Monitoring.Group, values_from = Total_AnglerHours, values_fill = 0)
+  ) %>%
+    kable_styling(latex_options = "striped")
+
+```
+
+
+
+
+```{r echo = FALSE, include = FALSE, warning = FALSE, message = FALSE}
+## Get it down to the species there would be enough or or we're interested in
+total.fish <- dat %>%
+  group_by(Common.Name) %>%
+  summarise(total = sum(n))
+
+
+dat <- dat %>%
+  filter(Common.Name %in% total.fish$Common.Name)
+
+#List of candidate assessment species for 2023, 2025
+assess_spp <- c("Black rockfish", "Quillback rockfish", "Copper rockfish", 
+                "Yellowtail rockfish")
+  
+
+fish_numbers <- dat %>%
+  group_by(Common.Name, Monitoring.Group, YEAR, Region) %>%
+  summarise(total_fish = sum(n),
+            avg_annual_cpue = mean(CPUE))# %>%
+  # group_by(Common.Name, CA_area) %>%
+  # summarise(avg_fish = mean(total_fish),
+  #           avg_cpue = mean(avg_annual_cpue)) %>%
+  # mutate(avg_fish = round(avg_fish,0))
+  # 
+
+```
+
+\FloatBarrier
+
+\clearpage
+\newpage
+
+```{r specieslong, echo = FALSE, warning = FALSE, message = FALSE}
+kableExtra::kbl(fish_numbers,
+                longtable = TRUE,
+  booktabs = TRUE,
+  caption = "Longer table with raw data",
+  row.names = F
+) %>%
+  kable_styling(latex_options=c("repeat_header", "striped", "hold_position"))
+```
