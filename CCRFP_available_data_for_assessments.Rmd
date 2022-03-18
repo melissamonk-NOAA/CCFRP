@@ -42,6 +42,64 @@ library(knitr)
 ```
 
 
+#CCFRP Background
+The California Collaborative Fisheries Research Program, 
+[CCFRP](https://www.mlml.calstate.edu/ccfrp/), 
+is a fishery-independent hook-and-line survey designed to monitor nearshore fish 
+populations at a series of sampling 
+locations both inside and adjacent to California's netowrk of Marine Protect Areas
+(MPAs) [@Wendt2009; @Starr2015].  The CCFRP survey began in 2007 in collaboration 
+with NMFS scientists and the fishing community.  The core area of the survey includes 
+A&ntilde;o Nuevo and Point Lobos sampled by San Jose State University Moss Landing 
+Marine Labs (MLML), and Point Buchon and Piedras Blancas by California Polytechnic University 
+San Luis Obispo (Cal Poly). In 2017, CCFRP expanded coastwide within California, expanding 
+to include four additional partners, Cal Poly Humboldt (CPH; formerly Humboldt State 
+University), University of California Davis' Bodega Marine Lab (BML), University 
+of California Santa Barbara (UCSB) and Scripps Institute of Oceanography (SIO), and 
+xxxx monitored MPA/reference area pairs (Table xx).
+
+Insert a table of which universities monitor which MPAs.  Insert a maps of the 
+MPAs with the cells. 
+
+
+The CCFRP survey design is consistent across all partners. Each MPA and reference 
+area consists of a number 500 x 500 m cells. The survey is restricted to xxxx feet 
+to reduce potential effects of barotrauma since the survey was designed as a capture 
+and release survey, with a sub-study tag/recapture program. On any given survey day site cells 
+are randomly selected within a stratum (MPA and/or reference cells).  Commercial 
+passenger fishing vessels (CPFVs) are chartered for the survey and the captain 
+is allowed to search within the cell for a fishing location.  During a sampling 
+event, each cell is fished for a total of 30-45 minutes by volunteer anglers. Volunteer 
+anglers are allowed to reel up their lines when they believe they've hooked fish, 
+re-bait and continue fishing until the the drop is complete. Each fish encountered 
+can be linked back to an angler. Each anglers fishes one line, with two hooks. 
+The jig and bait type may differ.....
+
+All fish encountered are measured to the nearest centimeter (fork length).  
+A total of xxxx fish were tagged since 2007, and the majority of fish are 
+released or descended to depth. Starting in 2017, at the request of NMFS, some 
+fish are retained to collect otoliths and fin clips that provide needed 
+biological information for nearshore species.  In 2022, the goal will be to collect 
+50-100 otoliths for commonly enountered species for use in the 2023 stock assessments.
+
+Due to the nature of the fishery in northern California, Humboldt conducts sampling aboard 6-pack 
+vessels, and therefore has fewer total angler hours per year compared to the 
+other regions ().  The COVID-19 pandemic also affect the survey effort, but all 
+partners were able to conduct sampling in 2000 and 2001.  
+
+
+
+
+
+Tables of the number of positive drops of a species by university partner,
+inside and outside the MPA
+
+The number of otoliths collected by university partner and year
+
+One sampling iste does not have 
+
+
+
 ```{r setup, echo = FALSE, include = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
 knitr::opts_chunk$set(echo = FALSE)
 
@@ -52,9 +110,31 @@ setwd("C:/GitHub/CCFRP")
 load("CCFRP_cleanedup.RData")
 #-------------------------------------------------------------------------------
 
+Assess2023 <- c('Black rockfish',
+                'Copper rockfish',
+                'Quillback rockfish', 
+                'Yellowtail rockfish')
+
+
+AssessTop30 <- c('Brown rockfish',
+                 'Treefish rockfish',
+                 'Blue rockfish',
+                 'Deacon rockfish',
+                 'Canary rockfish',
+                 'Vermilion rockfish',
+                 'China rockfish',
+                 'Olive rockfish',
+                 'Grass rockfish',
+                 'Copper rockfish')
+
+#Reorder university so that the table has years in order - not morth to south, 
+#but this is a kable issue - if you put HSU first, the first year they sampled, 
+#2017, is first in the table
 dat <- dat %>%
- # mutate_at(vars(Monitoring.Group), as.factor) %>%
-  mutate(Monitoring.Group = factor(Monitoring.Group, levels = c( "MLML", "Cal Poly", "HSU", "BML", "UCSB", "SIO")))
+  mutate(Monitoring.Group = factor(Monitoring.Group, levels = c( "MLML", 
+                                                                 "Cal Poly", 
+                                                                 "HSU", "BML", 
+                                                                 "UCSB", "SIO")))
          
          
 #Get the total angler hours by monitoring area
@@ -100,11 +180,6 @@ total.fish <- dat %>%
 
 dat <- dat %>%
   filter(Common.Name %in% total.fish$Common.Name)
-
-#List of candidate assessment species for 2023, 2025
-assess_spp <- c("Black rockfish", "Quillback rockfish", "Copper rockfish", 
-                "Yellowtail rockfish")
-  
 
 fish_numbers <- dat %>%
   group_by(Common.Name, Monitoring.Group, YEAR, Region) %>%
