@@ -1,0 +1,13 @@
+usethis
+devtools
+dplyr
+ggplot2
+ggridges
+stringr
+tidyr
+unikn
+viridisLite
+viridis
+kableExtra
+knitr
+forcats

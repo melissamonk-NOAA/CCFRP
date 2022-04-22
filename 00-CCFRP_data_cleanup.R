@@ -98,7 +98,13 @@ drifts <- drifts %>%
   mutate_at(
     vars(SDepth2mRes, EDepth2mRes, SDepth90mRes, EDepth90mRes),
     meters_to_feet
-  )
+  ) %>%
+  rename( StartGISDepth2mRes_ft = SDepth2mRes,
+          EndGISDepth2mRes_ft = EDepth2mRes,
+          StartGISDepth90mRes_ft = SDepth90mRes,
+          EndGISDepth90mRes_ft = EDepth90mRes)
+    
+
 
 # Collapse catches to drift level
 #Target_catches <- subset(catches, Species.Code == ccfrp.species.code)
@@ -107,7 +113,7 @@ Drift_catches <- catches %>%
   tally()
 
 
-# join drifts and catch info and make NA 0 where target species not observed
+# join drifts and catch info and calculate cpue
 dat <- left_join(Drift_catches, drifts)
 dat <- dat %>%
   mutate(Area.code = substring(Drift.ID, 1, 2)) %>%
@@ -175,7 +181,7 @@ Time_cell_fished <- dat %>%
 Drift_time_keep <- Time_cell_fished %>% filter(tot_time >= (10/60))
 
 # Remove cells fished less tan a total of 15 minutes on a day
-dat <- dat %>%
+dat_final <- dat %>%
   filter(
     ID.Cell.per.Trip %in% Drift_time_keep$ID.Cell.per.Trip)
 
