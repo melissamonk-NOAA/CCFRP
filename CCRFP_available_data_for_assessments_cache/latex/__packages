@@ -11,3 +11,4 @@ viridis
 kableExtra
 knitr
 forcats
+purrr
