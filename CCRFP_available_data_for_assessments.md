@@ -2,7 +2,7 @@
 title: "California Collaborative Fisheries Research Program"
 subtitle: "Data availability for stock assessments"
 author: "Melissa H. Monk"
-date: "April 26, 2022"
+date: "April 28, 2022"
 output:
   bookdown::pdf_document2: 
     keep_tex: true
@@ -33,41 +33,56 @@ always_allow_html: true
 
 
 
-# CCFRP Background
+# Summary
+This document summarizes the data from the California Collaborative 
+Fisheries Research Program (CCFRP) as well as the available data for the four 
+species proposed for stock assessments in 2023, black rockfish (*Sebastes melanops*),
+copper rockfish (*S. caurinus*), quillback rockfish (*S. maliger*), and 
+yellowtail rockfish (*S. flavidus*) . 
+
+# Survey Background
+The 1999 Marine Life Protection Act resulted in the creation of a network of 
+Marine Protected Areas (MPAs) along California's coast. The state of California
+designated both State Marine Reserves (SMRs) and State Marine Recreational 
+Management areas (SMCAs). The SMRs prohibit all recreational and commercial take 
+and SMCAs allow some recreational and/or commercial take that varies by SMCA. 
+A number of MPAs have both an SMR and SMCA, of which the SMR is closer to shore.
 The California Collaborative Fisheries Research Program, 
 [CCFRP](https://www.mlml.calstate.edu/ccfrp/), 
 is a fishery-independent hook-and-line survey designed to monitor nearshore fish 
-populations at a series of sampling 
-locations both inside and adjacent to California's netowrk of Marine Protect Areas
-(MPAs) [@Wendt2009; @Starr2015].  The CCFRP survey began in 2007 in collaboration 
-with NMFS scientists and the fishing community.  The core area of the survey includes 
-A&ntilde;o Nuevo and Point Lobos sampled by San Jose State University Moss Landing 
-Marine Labs (MLML), and Point Buchon and Piedras Blancas by California Polytechnic University 
-San Luis Obispo (Cal Poly). In 2017, CCFRP expanded coastwide within California, expanding 
-to include four additional partners, Cal Poly Humboldt (CPH; formerly Humboldt State 
-University), University of California Davis' Bodega Marine Lab (BML), University 
-of California Santa Barbara (UCSB) and Scripps Institute of Oceanography (SIO), and 
-xxxx monitored MPA/reference area pairs (Table xx). Cal Poly Humboldt samples the 
-furthest north sites, which are still south of Cape Mendocino.  There are three 
-nearshore State Marine Conservation Areas (SMCAs) north of the South Cap Mendocino 
-State Marine Reserve (SMR) that is monitored. However, xxxxx
+populations at a series of sampling locations both inside and adjacent to 
+California's network of MPAs [@Wendt2009; @Starr2015]. The CCFRP survey began in 
+2007 in collaboration with NMFS scientists and the fishing community.  The core 
+area of the survey includes A&ntilde;o Nuevo SMR and Point Lobos SMR sampled by 
+San Jose State University Moss Landing Marine Lab, and Point Buchon SMR 
+and Piedras Blancas SMR sampled by California Polytechnic University 
+San Luis Obispo (Figure \@ref(fig:fig-mpa-map)). In 2017, CCFRP expanded within California to 
+include four additional partners, Cal Poly Humboldt (formerly Humboldt State 
+University), University of California Davis' Bodega Marine Lab, University 
+of California Santa Barbara and Scripps Institute of Oceanography. 
+The CCFRP now monitors 12 MPA and reference area pairs (Table \@ref(tab:monitoring)). 
+Cal Poly Humboldt samples the furthest north sites, which are still south of Cape 
+Mendocino.  There are three nearshore SMCAs north of the South Cape Mendocino that 
+were not selected for CCFRP due to historical sampling  at the other two sites and 
+the SMR tier.
 
-Insert a table of which universities monitor which MPAs.  Insert a maps of the 
-MPAs with the cells. 
 
 
 The CCFRP survey design is consistent across all partners. Each MPA and reference 
-area consists of a number 500 x 500 m cells. The survey is restricted to xxxx feet 
-to reduce potential effects of barotrauma since the survey was designed as a capture 
-and release survey, with a sub-study tag/recapture program. On any given survey day site cells 
-are randomly selected within a stratum (MPA and/or reference cells).  Commercial 
-passenger fishing vessels (CPFVs) are chartered for the survey and the captain 
-is allowed to search within the cell for a fishing location.  During a sampling 
-event, each cell is fished for a total of 30-45 minutes by volunteer anglers. Volunteer 
-anglers are allowed to reel up their lines when they believe they've hooked fish, 
-re-bait and continue fishing until the the drop is complete. Each fish encountered 
+area consists of a number 500 x 500 m cells that were selected because the contained 
+appropriate rockfish habitat. The survey is restricted to 120 feet to reduce 
+potential effects of barotrauma since the survey was designed as a capture 
+and release survey, with a sub-study tag/recapture program. On any given survey 
+day site cells are randomly selected within a stratum (MPA and/or reference cells).  
+Commercial passenger fishing vessels (CPFVs) are chartered for the survey and 
+the captain is allowed to search within the cell for a fishing location.  During 
+a sampling event, each cell is fished for a total of 30-45 minutes by volunteer 
+anglers. Volunteer anglers are allowed to reel up their lines at any time during a 
+fishing drop if they think they've hooked fish. Anglers can then re-bait and 
+continue fishing until the the drop is complete. Each fish encountered 
 can be linked back to an angler. Each anglers fishes one line, with two hooks. 
-The jig and bait type may differ.....
+The jig and bait is assigned to each angler, but an angler may fish with a personal 
+fishing rod.
 
 All fish encountered are measured to the nearest centimeter (fork length).  
 A total of xxxx fish were tagged since 2007, and the majority of fish are 
@@ -81,10 +96,8 @@ vessels, and therefore has fewer total angler hours per year compared to the
 other regions ().  The COVID-19 pandemic also affect the survey effort, but all 
 partners were able to conduct sampling in 2000 and 2001.  
 
-Tables of the number of positive drops of a species by university partner,
-inside and outside the MPA
 
-The number of otoliths collected by university partner and year
+
 
 
 ![(\#fig:fig-mpa-map)Map of the State Marine Reserves (SMRs) monitored by the CCFRP program.](MPA_map.pdf) 
@@ -113,18 +126,18 @@ drops with missing depth data that were added based on the bathymetry.
 
 \begin{table}
 
-\caption{(\#tab:monitoring)Monitoring groups and the associated MPAs they sample. The shorthand names will be 
+\caption{(\#tab:monitoring)Monitoring groups and the associated MPAs they sample. The abbreviated names will be 
   used throughout most of the tables in this document}
 \centering
 \begin{tabular}[t]{lll}
 \toprule
-Monitoring Group & Shorthand Name & MPA\\
+Monitoring Group & Abbreviated Name & MPA\\
 \midrule
 \cellcolor{gray!6}{Cal Poly Humboldt} & \cellcolor{gray!6}{Humboldt} & \cellcolor{gray!6}{South Cape Mendocino}\\
 Cal Poly Humboldt & Humboldt & Ten Mile\\
 \cellcolor{gray!6}{Bodega Marine Lab} & \cellcolor{gray!6}{Bodega} & \cellcolor{gray!6}{Stewarts Point}\\
 Bodega Marine Lab & Bodega & Bodega Head\\
-\cellcolor{gray!6}{Moss Landing Marine Lab} & \cellcolor{gray!6}{Moss Landing} & \cellcolor{gray!6}{Año Nuevo}\\
+\cellcolor{gray!6}{Moss Landing Marine Lab} & \cellcolor{gray!6}{Moss Landing} & \cellcolor{gray!6}{Ano Nuevo}\\
 \addlinespace
 Moss Landing Marine Lab & Moss Landing & Point Lobos\\
 \cellcolor{gray!6}{Cal Poly SLO} & \cellcolor{gray!6}{Cal Poly} & \cellcolor{gray!6}{Piedras Blancas}\\
@@ -180,7 +193,7 @@ YEAR & Humboldt & Bodega & Moss Landing & Cal Poly & UCSB & Scripps\\
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{Cal Poly Humboldt} & \multicolumn{2}{c}{Bodega Marine Lab} & \multicolumn{2}{c}{Moss Landing} & \multicolumn{2}{c}{Cal Poly SLO} & \multicolumn{2}{c}{UC Santa Barbara} & \multicolumn{2}{c}{Scripps} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7} \cmidrule(l{3pt}r{3pt}){8-9} \cmidrule(l{3pt}r{3pt}){10-11} \cmidrule(l{3pt}r{3pt}){12-13}
-YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
+YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
 \midrule
 \cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{125(72)} & \cellcolor{gray!6}{70(93)} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{64(71)} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
 2008 & - & - & - & - & 90(101) & 74(82) & 30(45) & 62(65) & - & - & - & -\\
@@ -256,7 +269,7 @@ Vermilion Rockfish & 221 & 369 & 1484 & 2723 & 271 & 98\\
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
-YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
+YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
 \midrule
 \cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{70\%} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{34\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
 2008 & - & - & - & - & 74\% & 24\% & 10\% & 46\% & - & - & - & -\\
@@ -290,7 +303,7 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nue
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
-YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
+YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
 \midrule
 \cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
 2008 & - & - & - & - & 2\% & 16\% & 38\% & 10\% & - & - & - & -\\
@@ -324,7 +337,7 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nue
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
-YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
+YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
 \midrule
 \cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
 2008 & - & - & - & - & - & - & - & - & - & - & - & -\\
@@ -358,7 +371,7 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nue
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
-YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Año Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
+YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
 \midrule
 \cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{14\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
 2008 & - & - & - & - & 4\% & 10\% & 18\% & 16\% & - & - & - & -\\
@@ -396,26 +409,63 @@ inside and outside the MPAs by MPA and species are in Figures xxxx.  Length data
 filtered to the drifts included in the final data set.
 
 
-![(\#fig:unnamed-chunk-4-1)Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF)](CCRFP_available_data_for_assessments_files/figure-latex/unnamed-chunk-4-1.pdf) 
-
-<!-- -->
-
-![(\#fig:unnamed-chunk-4-2)Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF)](CCRFP_available_data_for_assessments_files/figure-latex/unnamed-chunk-4-2.pdf) 
-
-<!-- -->
-
-![(\#fig:unnamed-chunk-4-3)Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF)](CCRFP_available_data_for_assessments_files/figure-latex/unnamed-chunk-4-3.pdf) 
-
-<!-- -->
-
-![(\#fig:unnamed-chunk-4-4)Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF)](CCRFP_available_data_for_assessments_files/figure-latex/unnamed-chunk-4-4.pdf) 
-
-<!-- -->
+\FloatBarrier
 
 
 
 
+![(\#fig:fig-lengths-1)Percent of Black Rockfish fish in 2 cm fork length bins inside each MPA and outside at reference areas (REF).](CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf) 
 
+![(\#fig:fig-lengths-2)Percent of Copper Rockfish fish in 2 cm fork length bins inside each MPA and outside at reference areas (REF).](CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf) 
+
+![(\#fig:fig-lengths-3)Percent of Quillback Rockfish fish in 2 cm fork length bins inside each MPA and outside at reference areas (REF).](CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf) 
+
+![(\#fig:fig-lengths-4)Percent of Yellowtail Rockfish fish in 2 cm fork length bins inside each MPA and outside at reference areas (REF).](CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf) 
+
+# Available Otoliths
+The number of otoliths collected by university partner and year
+
+
+\FloatBarrier
+
+\begin{table}
+
+\caption{(\#tab:otoliths)Total number of fish retained by monitoring group and year.}
+\centering
+\begin{tabular}[t]{lrrrrrrr}
+\toprule
+Common.Name & Bodega & Moss Landing & Cal Poly & Humboldt & NA & UCSB & Scripps\\
+\midrule
+\cellcolor{gray!6}{Black-and-Yellow Rockfish} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{15} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+Black Rockfish & 52 & 142 & 14 & 188 & 244 & 0 & 0\\
+\cellcolor{gray!6}{Blue Rockfish} & \cellcolor{gray!6}{54} & \cellcolor{gray!6}{316} & \cellcolor{gray!6}{183} & \cellcolor{gray!6}{161} & \cellcolor{gray!6}{69} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0}\\
+Brown Rockfish & 11 & 39 & 3 & 2 & 4 & 0 & 0\\
+\cellcolor{gray!6}{California Scorpionfish} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1}\\
+\addlinespace
+Canary Rockfish & 2 & 3 & 3 & 0 & 0 & 0 & 0\\
+\cellcolor{gray!6}{China Rockfish} & \cellcolor{gray!6}{48} & \cellcolor{gray!6}{38} & \cellcolor{gray!6}{3} & \cellcolor{gray!6}{70} & \cellcolor{gray!6}{31} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+Copper Rockfish & 17 & 20 & 29 & 105 & 5 & 0 & 0\\
+\cellcolor{gray!6}{Deacon Rockfish} & \cellcolor{gray!6}{59} & \cellcolor{gray!6}{64} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{133} & \cellcolor{gray!6}{58} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+Gopher Rockfish & 90 & 870 & 450 & 24 & 154 & 0 & 1\\
+\addlinespace
+\cellcolor{gray!6}{Honeycomb Rockfish} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1}\\
+Kelp Greenling & 3 & 11 & 0 & 0 & 0 & 0 & 0\\
+\cellcolor{gray!6}{Kelp Rockfish} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{17} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1}\\
+Lingcod & 0 & 14 & 24 & 0 & 1 & 0 & 0\\
+\cellcolor{gray!6}{Olive or Yellowtail Rockfish} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+\addlinespace
+Olive Rockfish & 24 & 55 & 32 & 47 & 9 & 0 & 1\\
+\cellcolor{gray!6}{Quillback Rockfish} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{63} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+Rosy Rockfish & 0 & 24 & 1 & 46 & 44 & 0 & 0\\
+\cellcolor{gray!6}{Starry Rockfish} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{4} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1}\\
+Treefish & 0 & 0 & 25 & 0 & 0 & 0 & 1\\
+\addlinespace
+\cellcolor{gray!6}{UnID Blue Rockfish} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+Vermilion Rockfish & 11 & 28 & 31 & 54 & 1 & 0 & 0\\
+\cellcolor{gray!6}{Yellowtail Rockfish} & \cellcolor{gray!6}{36} & \cellcolor{gray!6}{19} & \cellcolor{gray!6}{13} & \cellcolor{gray!6}{120} & \cellcolor{gray!6}{27} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \clearpage
 \newpage

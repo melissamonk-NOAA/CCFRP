@@ -29,7 +29,6 @@ always_allow_html: true
 
 ```{r load-packages, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-knitr::opts_chunk$set(eval.after = "fig.cap")
 library(devtools)
 library(dplyr)
 library(ggplot2)
@@ -82,19 +81,23 @@ SpeciesOfInterest <- rbind(Assess2023, AssessTop30)
 ```
 
 ```{r echo = FALSE, include = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
-# Reorder university so that the table has years in order - not morth to south,
+# Reorder university so that the table has years in order - not north to south,
 # but this is a kable issue - if you put HSU first, the first year they sampled,
 # 2017, is first in the table
+
+#remove tilde from Ano, now causing issues
+#dat_final$Name = str_replace(dat_final$Name,"Año Nuevo", "Ano Nuevo")
+
 dat_final <- dat_final %>%
   ungroup() %>%
-  mutate(Monitoring.Group = factor(Monitoring.Group, levels = c(
+  dplyr::mutate(Monitoring.Group = factor(Monitoring.Group, levels = c(
     "MLML",
     "Cal Poly",
     "HSU", "BML",
     "UCSB", "SIO"
   ))) %>%
-  mutate(`Monitoring Group` = Monitoring.Group) %>%
-  mutate(`Monitoring Group` = recode(`Monitoring Group`,
+  dplyr::mutate(`Monitoring Group` = Monitoring.Group) %>%
+  dplyr::mutate(`Monitoring Group` = recode(`Monitoring Group`,
     "HSU" = "Cal Poly Humboldt",
     "BML" = "Bodega Marine Lab",
     "MLML" = "Moss Landing Marine Lab",
@@ -102,7 +105,7 @@ dat_final <- dat_final %>%
     "UCSB" = "UC Santa Barbara",
     "SIO" = "Scripps Institute Ocean."
   )) %>%
-  mutate(Monitoring.Group = recode(Monitoring.Group,
+  dplyr::mutate(Monitoring.Group = recode(Monitoring.Group,
     "HSU" = "Humboldt",
     "BML" = "Bodega",
     "MLML" = "Moss Landing",
@@ -110,14 +113,19 @@ dat_final <- dat_final %>%
     "UCSB" = "UCSB",
     "SIO" = "Scripps"
   )) %>%
-  mutate(Name = factor(Name, levels = c(
+#  dplyr::mutate(Name = factor(Name)) %>%
+# dplyr:: mutate(Name = dplyr::recode(Name,
+#                       "Año Nuevo" = "Ano Nuevo")) %>%
+  dplyr::mutate(Name = factor(Name, levels = c(
     "South Cape Mendocino", "Ten Mile",
     "Stewarts Point", "Bodega Head",
     "Año Nuevo", "Point Lobos",
     "Piedras Blancas", "Point Buchon",
     "Carrington Point", "Anacapa Island",
     "Swamis", "South La Jolla"
-  )))
+  ))) %>%
+  dplyr::mutate(Name = recode(Name,
+                              "Año Nuevo" = "Ano Nuevo"))
 
 # Change the levels of monitoring groups from north to south - didn't do before because of weird tables stuff
 # Reorder the factor levels north to south
@@ -129,8 +137,10 @@ dat_final <- dat_final %>%
 drifts_final <- dat_final %>%
   ungroup() %>%
   select(
-    Drift.ID, Trip.ID, Grid.Cell.ID, SITE, Name, MPA.Designation, YEAR, Month, Day, Start.Depth..ft., End.Depth..ft.,
-    StartGISDepth2mRes_ft, StartGISDepth90mRes_ft, EndGISDepth2mRes_ft, EndGISDepth90mRes_ft
+    Drift.ID, Trip.ID, Grid.Cell.ID, SITE, Name, MPA.Designation, YEAR, Month, 
+    Day, Start.Depth..ft., End.Depth..ft., Monitoring.Group,
+    StartGISDepth2mRes_ft, StartGISDepth90mRes_ft, EndGISDepth2mRes_ft, 
+    EndGISDepth90mRes_ft
   ) %>%
   unique()
 
@@ -140,41 +150,56 @@ species_lengths <- catches %>%
 species_lengths <- inner_join(species_lengths, drifts_final)
 ```
 
-# CCFRP Background
+# Summary
+This document summarizes the data from the California Collaborative 
+Fisheries Research Program (CCFRP) as well as the available data for the four 
+species proposed for stock assessments in 2023, black rockfish (*Sebastes melanops*),
+copper rockfish (*S. caurinus*), quillback rockfish (*S. maliger*), and 
+yellowtail rockfish (*S. flavidus*) . 
+
+# Survey Background
+The 1999 Marine Life Protection Act resulted in the creation of a network of 
+Marine Protected Areas (MPAs) along California's coast. The state of California
+designated both State Marine Reserves (SMRs) and State Marine Recreational 
+Management areas (SMCAs). The SMRs prohibit all recreational and commercial take 
+and SMCAs allow some recreational and/or commercial take that varies by SMCA. 
+A number of MPAs have both an SMR and SMCA, of which the SMR is closer to shore.
 The California Collaborative Fisheries Research Program, 
 [CCFRP](https://www.mlml.calstate.edu/ccfrp/), 
 is a fishery-independent hook-and-line survey designed to monitor nearshore fish 
-populations at a series of sampling 
-locations both inside and adjacent to California's netowrk of Marine Protect Areas
-(MPAs) [@Wendt2009; @Starr2015].  The CCFRP survey began in 2007 in collaboration 
-with NMFS scientists and the fishing community.  The core area of the survey includes 
-A&ntilde;o Nuevo and Point Lobos sampled by San Jose State University Moss Landing 
-Marine Labs (MLML), and Point Buchon and Piedras Blancas by California Polytechnic University 
-San Luis Obispo (Cal Poly). In 2017, CCFRP expanded coastwide within California, expanding 
-to include four additional partners, Cal Poly Humboldt (CPH; formerly Humboldt State 
-University), University of California Davis' Bodega Marine Lab (BML), University 
-of California Santa Barbara (UCSB) and Scripps Institute of Oceanography (SIO), and 
-xxxx monitored MPA/reference area pairs (Table xx). Cal Poly Humboldt samples the 
-furthest north sites, which are still south of Cape Mendocino.  There are three 
-nearshore State Marine Conservation Areas (SMCAs) north of the South Cap Mendocino 
-State Marine Reserve (SMR) that is monitored. However, xxxxx
+populations at a series of sampling locations both inside and adjacent to 
+California's network of MPAs [@Wendt2009; @Starr2015]. The CCFRP survey began in 
+2007 in collaboration with NMFS scientists and the fishing community.  The core 
+area of the survey includes A&ntilde;o Nuevo SMR and Point Lobos SMR sampled by 
+San Jose State University Moss Landing Marine Lab, and Point Buchon SMR 
+and Piedras Blancas SMR sampled by California Polytechnic University 
+San Luis Obispo (Figure \@ref(fig:fig-mpa-map)). In 2017, CCFRP expanded within California to 
+include four additional partners, Cal Poly Humboldt (formerly Humboldt State 
+University), University of California Davis' Bodega Marine Lab, University 
+of California Santa Barbara and Scripps Institute of Oceanography. 
+The CCFRP now monitors 12 MPA and reference area pairs (Table \@ref(tab:monitoring)). 
+Cal Poly Humboldt samples the furthest north sites, which are still south of Cape 
+Mendocino.  There are three nearshore SMCAs north of the South Cape Mendocino that 
+were not selected for CCFRP due to historical sampling  at the other two sites and 
+the SMR tier.
 
-Insert a table of which universities monitor which MPAs.  Insert a maps of the 
-MPAs with the cells. 
 
 
 The CCFRP survey design is consistent across all partners. Each MPA and reference 
-area consists of a number 500 x 500 m cells. The survey is restricted to xxxx feet 
-to reduce potential effects of barotrauma since the survey was designed as a capture 
-and release survey, with a sub-study tag/recapture program. On any given survey day site cells 
-are randomly selected within a stratum (MPA and/or reference cells).  Commercial 
-passenger fishing vessels (CPFVs) are chartered for the survey and the captain 
-is allowed to search within the cell for a fishing location.  During a sampling 
-event, each cell is fished for a total of 30-45 minutes by volunteer anglers. Volunteer 
-anglers are allowed to reel up their lines when they believe they've hooked fish, 
-re-bait and continue fishing until the the drop is complete. Each fish encountered 
+area consists of a number 500 x 500 m cells that were selected because the contained 
+appropriate rockfish habitat. The survey is restricted to 120 feet to reduce 
+potential effects of barotrauma since the survey was designed as a capture 
+and release survey, with a sub-study tag/recapture program. On any given survey 
+day site cells are randomly selected within a stratum (MPA and/or reference cells).  
+Commercial passenger fishing vessels (CPFVs) are chartered for the survey and 
+the captain is allowed to search within the cell for a fishing location.  During 
+a sampling event, each cell is fished for a total of 30-45 minutes by volunteer 
+anglers. Volunteer anglers are allowed to reel up their lines at any time during a 
+fishing drop if they think they've hooked fish. Anglers can then re-bait and 
+continue fishing until the the drop is complete. Each fish encountered 
 can be linked back to an angler. Each anglers fishes one line, with two hooks. 
-The jig and bait type may differ.....
+The jig and bait is assigned to each angler, but an angler may fish with a personal 
+fishing rod.
 
 All fish encountered are measured to the nearest centimeter (fork length).  
 A total of xxxx fish were tagged since 2007, and the majority of fish are 
@@ -188,10 +213,8 @@ vessels, and therefore has fewer total angler hours per year compared to the
 other regions ().  The COVID-19 pandemic also affect the survey effort, but all 
 partners were able to conduct sampling in 2000 and 2001.  
 
-Tables of the number of positive drops of a species by university partner,
-inside and outside the MPA
 
-The number of otoliths collected by university partner and year
+
 
 
 ```{r, fig-mpa-map, echo = FALSE, fig.cap = "Map of the State Marine Reserves (SMRs) monitored by the CCFRP program."}
@@ -223,13 +246,13 @@ drops with missing depth data that were added based on the bathymetry.
 ```{r monitoring, echo = FALSE, warning = FALSE, message = FALSE}
 knitr::kable(
   booktabs = T,
-  caption = "Monitoring groups and the associated MPAs they sample. The shorthand names will be 
+  caption = "Monitoring groups and the associated MPAs they sample. The abbreviated names will be 
   used throughout most of the tables in this document",
   dat_final %>%
     select(`Monitoring Group`, Monitoring.Group, Name) %>%
     unique() %>%
     arrange(Monitoring.Group, Name) %>%
-    rename('Shorthand Name' = Monitoring.Group,
+    rename('Abbreviated Name' = Monitoring.Group,
            'MPA' = Name)
 ) %>%
   kable_styling(latex_options = "striped")
@@ -367,39 +390,65 @@ inside and outside the MPAs by MPA and species are in Figures xxxx.  Length data
 filtered to the drifts included in the final data set.
 
 
-```{r, results = "asis", eval.after='fig.cap', fig.cap = "Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF).", warning = FALSE, message = FALSE, echo=FALSE}
-# calculate the number of positive drifts by each of the 2023 assess species
-# paste0("Distribution of fork length for " ,SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup=="Assess2023"][i], " inside and #outside each monitored MPA."
+\FloatBarrier
+
+```{r , warning = FALSE, message = FALSE, echo=FALSE}
+#"Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF).",
+
 spp_to_plot <- SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"]
 
-plot_list <- purrr::walk(.x = spp_to_plot,
+ plot_list <- purrr::map(.x = spp_to_plot,
                         .f = ~{
-                         print( species_lengths %>%
+                             species_lengths %>%
                              dplyr::filter(Common.Name == .x) %>%
-     ggplot(aes(x = Length..cm., colour = as.factor(SITE))) +
-     geom_freqpoly() +
-     facet_wrap(~Name) +
+     ggplot(aes(x = Length..cm., colour = SITE)) +
+     geom_histogram(aes(y = ..density..), alpha = 0.7, binwidth = 2, fill = "white") +
+     scale_y_continuous(labels = scales::percent_format()) +
+     facet_wrap(~Name, ncol = 3) +
      scale_color_brewer(palette = "Dark2") +
     labs(
       x = "Fork length (cm)",
       y = "Number of fish",
       title = .x
-   #   caption = paste0("Frequency of fork length (cm) for ", .x, " inside each MPA (MPA) and outside at reference #areas (REF).")
-    ) +
+  ) +
     theme(legend.title = element_blank())
-)
-      cat("\n\n<!-- -->\n\n")
-      
 })
 
+names(plot_list) = spp_to_plot
+ 
 ```
 
-```{r results = "asis", warning = FALSE, message = FALSE, echo=FALSE}
-#purrr::map(plot_list, ~ plot(.x))
+
+```{r fig-lengths, fig.cap = paste("Percent of",names(plot_list), "by 2 cm fork length bins encountered inside each MPA and outside at reference areas (REF)."), echo=FALSE, results = "asis"}
+
+for(plots in plot_list) {
+     print(plots)
+    cat('\n\n')
+}
+#fig.cap = "Percent of fish in 2 cm fork length bins inside each MPA and outside at reference areas (REF)."
+#eval.after = "fig.cap",warning = FALSE, message = FALSE, echo = FALSE,
 ```
 
+# Available Otoliths
+The number of otoliths collected by university partner and year
 
 
+\FloatBarrier
+
+```{r otoliths, results = 'asis',warning = FALSE, message = FALSE}
+knitr::kable(
+  booktabs = T,
+  caption = "Total number of fish retained by monitoring group and year.",
+   catches %>%
+   filter(Retained == 'TRUE') %>%
+   left_join(., drifts_final) %>%
+    group_by(Common.Name, Monitoring.Group) %>%
+    tally() %>%
+    pivot_wider(id_cols = Common.Name, names_from = Monitoring.Group, values_from = n, values_fill = 0)
+) %>%
+  kable_styling(latex_options = "striped")
+
+```
 
 \clearpage
 \newpage
