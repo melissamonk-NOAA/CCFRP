@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.27)  28 APR 2022 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.6)  6 MAY 2022 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **CCRFP_available_data_for_assessments.tex
 (./CCRFP_available_data_for_assessments.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-04-20> (c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2022-05-04> (c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
@@ -559,34 +559,35 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 117.
 (c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 155.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 155.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 155.
+[1
 
 {c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 pdfTeX warning: pdflatex.exe (file ./MPA_map.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<MPA_map.pdf, id=45, 614.295pt x 794.97pt>
+<MPA_map.pdf, id=48, 614.295pt x 794.97pt>
 File: MPA_map.pdf Graphic file (type pdf)
 <use MPA_map.pdf>
-Package pdftex.def Info: MPA_map.pdf  used on input line 185.
+Package pdftex.def Info: MPA_map.pdf  used on input line 190.
 (pdftex.def)             Requested size: 469.75604pt x 607.9196pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 215.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 215.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 215.
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.237 \newpage
+l.242 \newpage
               ] [3
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.237 \newpage
+l.242 \newpage
                <./MPA_map.pdf>]
-Overfull \hbox (3.41147pt too wide) in paragraph at lines 243--266
+Overfull \hbox (3.41147pt too wide) in paragraph at lines 248--271
  [][] 
  []
 
@@ -594,14 +595,14 @@ Overfull \hbox (3.41147pt too wide) in paragraph at lines 243--266
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.268 \begin{landscape}
+l.273 \begin{landscape}
                        \begin{table}]
-Overfull \hbox (5.15398pt too wide) in paragraph at lines 276--276
+Overfull \hbox (5.15398pt too wide) in paragraph at lines 281--281
 []|\T1/lmr/m/n/10 Carrington 
  []
 
 
-Overfull \hbox (74.06396pt too wide) in paragraph at lines 272--297
+Overfull \hbox (74.06396pt too wide) in paragraph at lines 277--302
  [][] 
  []
 
@@ -609,117 +610,117 @@ Overfull \hbox (74.06396pt too wide) in paragraph at lines 272--297
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.298 \end{landscape}
+l.303 \end{landscape}
                      ] [6
 
 
-] [7
+
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.342 \begin{landscape}
+l.336 \begin{landscape}
                        \begin{table}]
-Overfull \hbox (3.44017pt too wide) in paragraph at lines 348--348
+Overfull \hbox (3.44017pt too wide) in paragraph at lines 342--342
 []|\T1/lmr/m/n/10 Stewarts 
  []
 
 
-Overfull \hbox (13.68988pt too wide) in paragraph at lines 348--348
+Overfull \hbox (13.68988pt too wide) in paragraph at lines 342--342
 []|\T1/lmr/m/n/10 Carrington 
  []
 
 
-Overfull \hbox (3.91228pt too wide) in paragraph at lines 348--348
+Overfull \hbox (3.91228pt too wide) in paragraph at lines 342--342
+[]|\T1/lmr/m/n/10 Anacapa 
+ []
+
+[7
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.364 \end{landscape}
+                     ]
+Overfull \hbox (3.44017pt too wide) in paragraph at lines 372--372
+[]|\T1/lmr/m/n/10 Stewarts 
+ []
+
+
+Overfull \hbox (13.68988pt too wide) in paragraph at lines 372--372
+[]|\T1/lmr/m/n/10 Carrington 
+ []
+
+
+Overfull \hbox (3.91228pt too wide) in paragraph at lines 372--372
 []|\T1/lmr/m/n/10 Anacapa 
  []
 
 [8
-pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.370 \end{landscape}
+l.394 \end{landscape}
                      ]
-Overfull \hbox (3.44017pt too wide) in paragraph at lines 378--378
+Overfull \hbox (3.44017pt too wide) in paragraph at lines 402--402
 []|\T1/lmr/m/n/10 Stewarts 
  []
 
 
-Overfull \hbox (13.68988pt too wide) in paragraph at lines 378--378
+Overfull \hbox (13.68988pt too wide) in paragraph at lines 402--402
 []|\T1/lmr/m/n/10 Carrington 
  []
 
 
-Overfull \hbox (3.91228pt too wide) in paragraph at lines 378--378
+Overfull \hbox (3.91228pt too wide) in paragraph at lines 402--402
 []|\T1/lmr/m/n/10 Anacapa 
  []
 
 [9
-pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.400 \end{landscape}
+l.424 \end{landscape}
                      ]
-Overfull \hbox (3.44017pt too wide) in paragraph at lines 408--408
+Overfull \hbox (3.44017pt too wide) in paragraph at lines 432--432
 []|\T1/lmr/m/n/10 Stewarts 
  []
 
 
-Overfull \hbox (13.68988pt too wide) in paragraph at lines 408--408
+Overfull \hbox (13.68988pt too wide) in paragraph at lines 432--432
 []|\T1/lmr/m/n/10 Carrington 
  []
 
 
-Overfull \hbox (3.91228pt too wide) in paragraph at lines 408--408
+Overfull \hbox (3.91228pt too wide) in paragraph at lines 432--432
 []|\T1/lmr/m/n/10 Anacapa 
  []
 
 [10
-pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.430 \end{landscape}
-                     ]
-Overfull \hbox (3.44017pt too wide) in paragraph at lines 438--438
-[]|\T1/lmr/m/n/10 Stewarts 
- []
-
-
-Overfull \hbox (13.68988pt too wide) in paragraph at lines 438--438
-[]|\T1/lmr/m/n/10 Carrington 
- []
-
-
-Overfull \hbox (3.91228pt too wide) in paragraph at lines 438--438
-[]|\T1/lmr/m/n/10 Anacapa 
- []
-
-[11
 pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.460 \end{landscape}
+l.454 \end{landscape}
                      ]
-<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf, id=110, 469.755pt x 325.215pt>
+<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf, id=109, 469.755pt x 325.215pt>
 File: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf Graphic file (type pdf)
 <use CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf>
-Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf  used on input line 475.
+Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf  used on input line 469.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf, id=111, 469.755pt x 325.215pt>
+<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf, id=110, 469.755pt x 325.215pt>
 File: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf Graphic file (type pdf)
 <use CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf>
-Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf  used on input line 481.
+Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf  used on input line 475.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf, id=112, 469.755pt x 325.215pt>
+<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf, id=111, 469.755pt x 325.215pt>
 File: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf Graphic file (type pdf)
 <use CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf>
-Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf  used on input line 487.
+Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf  used on input line 481.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf, id=113, 469.755pt x 325.215pt>
+<CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf, id=112, 469.755pt x 325.215pt>
 File: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf Graphic file (type pdf)
 <use CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf>
-Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf  used on input line 493.
+Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf  used on input line 487.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[12
+[11
 
 
 
@@ -732,27 +733,27 @@ Package pdftex.def Info: CCRFP_available_data_for_assessments_files/figure-latex
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.502 \FloatBarrier
-                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf>] [13
+l.491 \FloatBarrier
+                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-1.pdf>] [12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.502 \FloatBarrier
-                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf>] [14
+l.491 \FloatBarrier
+                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-2.pdf>] [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.502 \FloatBarrier
-                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf>] [15
+l.491 \FloatBarrier
+                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-3.pdf>] [14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.502 \FloatBarrier
-                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf>] [16
+l.491 \FloatBarrier
+                    <./CCRFP_available_data_for_assessments_files/figure-latex/fig-lengths-4.pdf>] [15] [16
 pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.543 \clearpage
+l.539 \clearpage
                 ] (./CCRFP_available_data_for_assessments.aux)
 
 LaTeX Warning: There were multiply-defined labels.
@@ -761,18 +762,18 @@ Package rerunfilecheck Info: File `CCRFP_available_data_for_assessments.out' has
 (rerunfilecheck)             Checksum: 22330A28D3C0CDAC565F3C1952C92E68;753.
  ) 
 Here is how much of TeX's memory you used:
- 12723 strings out of 480193
- 204955 string characters out of 5891069
- 530986 words of memory out of 5000000
- 30424 multiletter control sequences out of 15000+600000
+ 12722 strings out of 480260
+ 204809 string characters out of 5892275
+ 531148 words of memory out of 5000000
+ 30358 multiletter control sequences out of 15000+600000
  512920 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,11n,63p,509b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
-Output written on CCRFP_available_data_for_assessments.pdf (16 pages, 311359 bytes).
+{c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/melissa.monk/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on CCRFP_available_data_for_assessments.pdf (16 pages, 344237 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
+ 232 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
  43 named destinations out of 1000 (max. 500000)
  74 words of extra memory for PDF output out of 10000 (max. 10000000)
 

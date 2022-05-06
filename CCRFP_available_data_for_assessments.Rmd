@@ -1,7 +1,7 @@
 ---
 title: "California Collaborative Fisheries Research Program"
 subtitle: "Data availability for stock assessments"
-author: "Melissa H. Monk"
+author: "Compiled by Melissa H. Monk (SWFSC)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   bookdown::pdf_document2: 
@@ -26,6 +26,7 @@ header-includes:
 always_allow_html: true
 ---
 
+\newcommand\CapeM{$40^\circ 10^\prime N$}
 
 ```{r load-packages, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -63,21 +64,21 @@ Assess2023 <- data.frame(
   AssessGroup = "Assess2023"
 )
 
-AssessTop30 <- data.frame(
-  Species = c(
-    "Brown Rockfish",
-    "Treefish",
-    "Blue Rockfish",
-    "Deacon Rockfish",
-    "Canary Rockfish",
-    "Vermilion Rockfish",
-    "China Rockfish",
-    "Olive Rockfish",
-    "Grass Rockfish"
-  ),
-  AssessGroup = "AssessTop30"
-)
-SpeciesOfInterest <- rbind(Assess2023, AssessTop30)
+# AssessTop30 <- data.frame(
+#   Species = c(
+#     "Brown Rockfish",
+#     "Treefish",
+#     "Blue Rockfish",
+#     "Deacon Rockfish",
+#     "Canary Rockfish",
+#     "Vermilion Rockfish",
+#     "China Rockfish",
+#     "Olive Rockfish",
+#     "Grass Rockfish"
+#   ),
+#   AssessGroup = "AssessTop30"
+# )
+SpeciesOfInterest <- Assess2023 #rbind(Assess2023, AssessTop30)
 ```
 
 ```{r echo = FALSE, include = FALSE, warning = FALSE, message = FALSE, cache = TRUE}
@@ -125,7 +126,8 @@ dat_final <- dat_final %>%
     "Swamis", "South La Jolla"
   ))) %>%
   dplyr::mutate(Name = recode(Name,
-                              "Año Nuevo" = "Ano Nuevo"))
+                              "Año Nuevo" = "Ano Nuevo")) %>%
+  dplyr::mutate(SITE = factor(SITE))
 
 # Change the levels of monitoring groups from north to south - didn't do before because of weird tables stuff
 # Reorder the factor levels north to south
@@ -173,16 +175,17 @@ California's network of MPAs [@Wendt2009; @Starr2015]. The CCFRP survey began in
 area of the survey includes A&ntilde;o Nuevo SMR and Point Lobos SMR sampled by 
 San Jose State University Moss Landing Marine Lab, and Point Buchon SMR 
 and Piedras Blancas SMR sampled by California Polytechnic University 
-San Luis Obispo (Figure \@ref(fig:fig-mpa-map)). In 2017, CCFRP expanded within California to 
+San Luis Obispo (Figure \@ref(fig:fig-mpa-map)). In 2017, CCFRP expanded within 
+California to 
 include four additional partners, Cal Poly Humboldt (formerly Humboldt State 
 University), University of California Davis' Bodega Marine Lab, University 
 of California Santa Barbara and Scripps Institute of Oceanography. 
 The CCFRP now monitors 12 MPA and reference area pairs (Table \@ref(tab:monitoring)). 
-Cal Poly Humboldt samples the furthest north sites, which are still south of Cape 
-Mendocino.  There are three nearshore SMCAs north of the South Cape Mendocino that 
-were not selected for CCFRP due to historical sampling  at the other two sites and 
-the SMR tier.
-
+Cal Poly Humboldt samples the furthest north sites, which are south of Cape 
+Mendocino, but the South Cape Mendocino SMR is north of the management line at 
+\CapeM.  There are three nearshore SMCAs north of Cape Mendocino that 
+were not selected for CCFRP due to historical sampling the tiers assigned to the 
+SMRs by CDFW.
 
 
 The CCFRP survey design is consistent across all partners. Each MPA and reference 
@@ -208,12 +211,11 @@ fish are retained to collect otoliths and fin clips that provide needed
 biological information for nearshore species.  In 2022, the goal will be to collect 
 50-100 otoliths for commonly enountered species for use in the 2023 stock assessments.
 
-Due to the nature of the fishery in northern California, Humboldt conducts sampling aboard 6-pack 
-vessels, and therefore has fewer total angler hours per year compared to the 
+Due to the nature of the fishery in northern California, Humboldt conducts 
+sampling aboard 6-pack vessels, and therefore has fewer total angler hours per 
+year compared to the 
 other regions ().  The COVID-19 pandemic also affect the survey effort, but all 
 partners were able to conduct sampling in 2000 and 2001.  
-
-
 
 
 
@@ -397,37 +399,69 @@ filtered to the drifts included in the final data set.
 
 spp_to_plot <- SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"]
 
- plot_list <- purrr::map(.x = spp_to_plot,
-                        .f = ~{
-                             species_lengths %>%
-                             dplyr::filter(Common.Name == .x) %>%
-     ggplot(aes(x = Length..cm., colour = SITE)) +
-     geom_histogram(aes(y = ..density..), alpha = 0.7, binwidth = 2, fill = "white") +
-     scale_y_continuous(labels = scales::percent_format()) +
+#create plot list
+plot_list = vector('list', length(spp_to_plot))
+
+
+for(i in 1:length(spp_to_plot)){
+ #subset to the species
+  spp_length_plot_dat = species_lengths %>%
+     dplyr::filter(Common.Name == spp_to_plot[i])
+
+#tally the sample sizes and create the label
+ length_counts <- species_lengths %>%
+    filter(Common.Name == spp_to_plot[i]) %>%
+  group_by(Common.Name, Name, SITE) %>%
+  summarise(n = n()) %>%
+   pivot_wider(id_cols = Name, names_from = SITE, values_from = n, values_fill = 0) %>%
+   mutate(Label = paste("MPA: N = ", MPA, "\n REF: N = ", REF)) %>%
+   select(Name, Label)
+ 
+
+ #join the labels to the dataframe
+ spp_length_plot_dat <- left_join(spp_length_plot_dat, length_counts)
+ 
+ #set x and y coordinates fr the labels
+ o
+ 
+ 
+  plot_list[[i]]  <- local({
+    i <- i
+  p1 <- ggplot(aes(x = Length..cm., fill = SITE), data = spp_length_plot_dat) +
+  geom_histogram(aes(y =..density..), binwidth = 2, alpha=0.5, position = 'identity') +
+    #scale_y_continuous(labels = scales::percent_format()) +
      facet_wrap(~Name, ncol = 3) +
      scale_color_brewer(palette = "Dark2") +
     labs(
       x = "Fork length (cm)",
-      y = "Number of fish",
-      title = .x
+      y = "Density"
   ) +
-    theme(legend.title = element_blank())
+    theme_bw() +
+    theme(legend.title = element_blank()) +
+   geom_text(aes(x = 30, y = .4, label = Label), inherit.aes = FALSE, size = 2, family = "sans")
+        # print(p1)
 })
+}
+
 
 names(plot_list) = spp_to_plot
  
 ```
 
 
-```{r fig-lengths, fig.cap = paste("Percent of",names(plot_list), "by 2 cm fork length bins encountered inside each MPA and outside at reference areas (REF)."), echo=FALSE, results = "asis"}
+```{r fig-lengths, fig.cap = paste("Density of",names(plot_list), "by 2 cm fork length bins encountered inside each MPA and outside at reference areas (REF)."), echo=FALSE, results = "asis"}
 
-for(plots in plot_list) {
-     print(plots)
+for(i in 1:length(plot_list)) {
+     print(plot_list[[i]])
     cat('\n\n')
 }
 #fig.cap = "Percent of fish in 2 cm fork length bins inside each MPA and outside at reference areas (REF)."
 #eval.after = "fig.cap",warning = FALSE, message = FALSE, echo = FALSE,
 ```
+
+
+
+\FloatBarrier 
 
 # Available Otoliths
 The number of otoliths collected by university partner and year
