@@ -150,14 +150,40 @@ drifts_final <- dat_final %>%
 species_lengths <- catches %>%
   filter(!is.na(Length..cm.))
 species_lengths <- inner_join(species_lengths, drifts_final)
+
+spp_to_plot <- SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"]
 ```
 
 # Summary
 This document summarizes the data from the California Collaborative 
 Fisheries Research Program (CCFRP) as well as the available data for the four 
-species proposed for stock assessments in 2023, black rockfish (*Sebastes melanops*),
+species proposed for stock assessments in 2023, including black rockfish (*Sebastes melanops*),
 copper rockfish (*S. caurinus*), quillback rockfish (*S. maliger*), and 
-yellowtail rockfish (*S. flavidus*) . 
+yellowtail rockfish (*S. flavidus*).  Preliminary analyses suggest the following 
+data availability to inform stock assessments for each species:
+
+**Black rockfish**: There are enough data to consider an index of abundance and also 
+include ages in the assessment model.    
+
+**Copper rockfish**: There are enough data north of Point Conception to consider an 
+index of abundance.  The two MPAs south of Point Conception with consistent encounters 
+of copper rockfish cover a very small fraction of the available habitat and were not 
+included in the original sampling design.  There are enough age data available north 
+of Point Conception for inclusion in an assessment model. Otoliths will be 
+collected south of Point Conception in 2022.  
+
+**Quillback rockfish**: There is only one MPA monitored north of the \CapeM management 
+boundary in California that was not part of the original sampling design and hence 
+does not have a long time series.  It is not likely that robust index can be developed
+from the sparse data separately north and south of \CapeM. An exploration of an index 
+could be considered if California is modeled as one area. Age data are available t
+hat could inform growth external to the assessment model.    
+
+**Yellowtail rockfish**: There are enough data to consider an index of abundance north of 
+Point Conception for yellowtail rockfish as well as include age data from the otoliths
+within the assessment model.
+
+
 
 # Survey Background
 The 1999 Marine Life Protection Act resulted in the creation of a network of 
@@ -165,37 +191,42 @@ Marine Protected Areas (MPAs) along California's coast. The state of California
 designated both State Marine Reserves (SMRs) and State Marine Recreational 
 Management areas (SMCAs). The SMRs prohibit all recreational and commercial take 
 and SMCAs allow some recreational and/or commercial take that varies by SMCA. 
-A number of MPAs have both an SMR and SMCA, of which the SMR is closer to shore.
+A number of MPAs consist of an SMR adjacent to an SMCA, of which the SMR is closer to shore.
 The California Collaborative Fisheries Research Program, 
 [CCFRP](https://www.mlml.calstate.edu/ccfrp/), 
 is a fishery-independent hook-and-line survey designed to monitor nearshore fish 
 populations at a series of sampling locations both inside and adjacent to 
-California's network of MPAs [@Wendt2009; @Starr2015]. The CCFRP survey began in 
-2007 in collaboration with NMFS scientists and the fishing community.  The core 
+California's network of MPAs. 
+
+The CCFRP survey began in 2007 with Cal Poly and Moss Landing Marine Labs 
+in collaboration with NMFS scientists and the fishing community.  The core 
 area of the survey includes A&ntilde;o Nuevo SMR and Point Lobos SMR sampled by 
 San Jose State University Moss Landing Marine Lab, and Point Buchon SMR 
 and Piedras Blancas SMR sampled by California Polytechnic University 
 San Luis Obispo (Figure \@ref(fig:fig-mpa-map)). In 2017, CCFRP expanded within 
-California to 
-include four additional partners, Cal Poly Humboldt (formerly Humboldt State 
+California to include four additional partners, Cal Poly Humboldt (formerly Humboldt State 
 University), University of California Davis' Bodega Marine Lab, University 
-of California Santa Barbara and Scripps Institute of Oceanography. 
+of California Santa Barbara, and the Scripps Institute of Oceanography. 
 The CCFRP now monitors 12 MPA and reference area pairs (Table \@ref(tab:monitoring)). 
 Cal Poly Humboldt samples the furthest north sites, which are south of Cape 
-Mendocino, but the South Cape Mendocino SMR is north of the management line at 
-\CapeM.  There are three nearshore SMCAs north of Cape Mendocino that 
-were not selected for CCFRP due to historical sampling the tiers assigned to the 
-SMRs by CDFW.
-
+Mendocino, but north of the management line at \CapeM. There are three nearshore 
+SMCAs north of Cape Mendocino that 
+were not selected for CCFRP monitoring due to historical sampling the tiers 
+assigned to the SMRs by CDFW. The COVID-19 pandemic also affected the 
+survey effort, but all partners were able to conduct sampling in 2000 and 2001.
 
 The CCFRP survey design is consistent across all partners. Each MPA and reference 
-area consists of a number 500 x 500 m cells that were selected because the contained 
-appropriate rockfish habitat. The survey is restricted to 120 feet to reduce 
-potential effects of barotrauma since the survey was designed as a capture 
-and release survey, with a sub-study tag/recapture program. On any given survey 
-day site cells are randomly selected within a stratum (MPA and/or reference cells).  
+area consists of a number of 500 x 500 m cells that were selected because the contained 
+appropriate rockfish habitat. The survey was designed as a capture 
+and release survey, with a sub-study tag/recapture program. Therefore, CCFRP restricts 
+sampling areas to depths shallower than approximately 120 feet in order to reduce 
+potential effects of barotrauma.  On any given survey 
+day site cells are randomly selected within a stratum (MPA and/or reference cells).
 Commercial passenger fishing vessels (CPFVs) are chartered for the survey and 
-the captain is allowed to search within the cell for a fishing location.  During 
+the captain is allowed to search within the cell for a fishing location.
+Due to the nature of the fishery in northern California, Cal Poly Humboldt conducts 
+sampling aboard 6-pack vessels, and therefore fishes for fewer total angler hours per 
+year compared to the other partners (Tables \@ref(tab:anghrs) and \@ref(tab:fishingdrops)). During 
 a sampling event, each cell is fished for a total of 30-45 minutes by volunteer 
 anglers. Volunteer anglers are allowed to reel up their lines at any time during a 
 fishing drop if they think they've hooked fish. Anglers can then re-bait and 
@@ -204,28 +235,18 @@ can be linked back to an angler. Each anglers fishes one line, with two hooks.
 The jig and bait is assigned to each angler, but an angler may fish with a personal 
 fishing rod.
 
-All fish encountered are measured to the nearest centimeter (fork length).  
-A total of xxxx fish were tagged since 2007, and the majority of fish are 
-released or descended to depth. Starting in 2017, at the request of NMFS, some 
-fish are retained to collect otoliths and fin clips that provide needed 
-biological information for nearshore species.  In 2022, the goal will be to collect 
-50-100 otoliths for commonly enountered species for use in the 2023 stock assessments.
+All fish encountered are measured to the nearest centimeter (fork length), and the 
+majority of fish are released or descended to depth. 
+A total of `r dim(catches %>% filter(str_length(Tag.ID)>0))[1]` fish were tagged 
+since 2007, and recapture data are available from each partner. Starting in 2017, 
+at the request of Melissa Monk (NMFS SWFSC), a fraction of the fish encountered 
+in the reference cells have been retained to collect otoliths and fin clips that 
+provide needed biological information for nearshore species.  In 2022, the goal 
+is to increase biological collections for commonly encountered species for use 
+in the 2023 stock assessments.
 
-Due to the nature of the fishery in northern California, Humboldt conducts 
-sampling aboard 6-pack vessels, and therefore has fewer total angler hours per 
-year compared to the 
-other regions ().  The COVID-19 pandemic also affect the survey effort, but all 
-partners were able to conduct sampling in 2000 and 2001.  
-
-
-
-```{r, fig-mpa-map, echo = FALSE, fig.cap = "Map of the State Marine Reserves (SMRs) monitored by the CCFRP program."}
-knitr::include_graphics('MPA_map.pdf')
-```
-
-
-
-# Available Samples
+ 
+# Available Data for Indices
 
 From 2007-2021 a total of `r length(unique(drifts_all$Trip.ID))` fishing trips 
 were taken, consisting of `r dim(drifts_all)[1]` fishing drops. When the CCFRP 
@@ -237,13 +258,34 @@ Fishing drops that drifted outside a cell were also excluded.  These site filter
 result in an available `r length(unique(dat$Drift.ID))`. The final filter removed 
 drifts within a cell that were not fished for at least ten minutes within a sampling 
 occasion, resulting in a total of `r length(unique(dat_final$Drift.ID))` fishing 
-drops available for analyses for stock assessments.
+drops available for analyses for stock assessments. The total nubmer of fish 
+encountered by CCFRP partner and the percent of positive drops by species and MPA
+can be found in Tables \@ref(tab:totalfishbygroup) - \@ref(tab:percentpos).
 
-Cal Poly Humboldt (formerly Humboldt State University) does not collect depth 
-information at each fishing drop.  Depths 
-were interpreted from the California Seafloor Mapping Project (CSMP) 2 m bathymetry 
-for the start and end locations of each fishing drop. There were also xx fishing 
-drops with missing depth data that were added based on the bathymetry.
+
+
+# Available Lengths and Otoliths
+
+The CCFRP measures every fish to the nearest centimeter and distributions of the 
+lengths inside and outside the MPAs by MPA and species are in Figures 
+\@ref(fig:lengths-1) - \@ref(fig:lengths-4).  Length data were 
+filtered to the drifts included in the final data set. Any species and MPA combination 
+with fewer than 20 observed fish in an MPA or reference area over the entirety 
+of the program were removed from the length plots.
+
+The total number of fish retained by university partner can be found in Table 
+\@ref(tab:otoliths).  This represents that maximum number of available otoliths, 
+which will be verified once the stock assessments for 2023 are verified.  The 
+rule of thumb for including conditional age-at-length samples is a minimum of 30 
+available fish in a year/fleet stratum.  Given this, there are likely not enough 
+fish from Bodega or Cal Poly for any species. 
+
+\FloatBarrier
+\newpage
+
+# Tables
+
+\FloatBarrier
 
 ```{r monitoring, echo = FALSE, warning = FALSE, message = FALSE}
 knitr::kable(
@@ -260,7 +302,7 @@ knitr::kable(
   kable_styling(latex_options = "striped")
 ```
 
-\newpage
+
 
 ```{r anghrs, echo = FALSE, warning = FALSE, message = FALSE}
 # Total effort by year among the programs
@@ -302,7 +344,7 @@ knitr::kable(
   add_header_above(c(" ", "Cal Poly Humboldt" = 2, "Bodega Marine Lab" = 2, 
                    "Moss Landing" = 2, "Cal Poly SLO" = 2, 
                    "UC Santa Barbara" = 2, "Scripps" = 2))  %>%
-  kable_styling(latex_options = "striped") %>%
+  kable_styling(latex_options = c("striped", "scale_down")) %>%
   column_spec(2, width = "1.7cm") %>%
   column_spec(3:12, width = "1.5cm") %>%
    landscape()
@@ -312,16 +354,8 @@ knitr::kable(
 \newpage
 
 
-# Species information
+\FloatBarrier
 
-We explored data availability for candidate species for the 2023 stock assessment 
-cycle as well as for any other species within the top 30 rockfish species in the 
-Stock Assessment Prioritiziation spreadsheet provided by the NWFSC. Only one rockfish 
-species within the top 30 species was never observed by observed by CCFRP, . 
-Data summaries are presented for the other 13 species.
-
-Species without a positive identification, e.g., blue and deacon rockfish or 
-yellowtail and olive rockfish, were excluded.
 
 
 ```{r totalfishbygroup, echo = FALSE, warning = FALSE, message = FALSE}
@@ -348,7 +382,7 @@ drifts_by_MPA <- dat_final %>%
   summarise(tot_drifts = n())
 ```
 
-```{r results = 'asis',warning = FALSE, message = FALSE}
+```{r percentpos, results = 'asis',warning = FALSE, message = FALSE}
 # calculate the number of positive drifts by each of the 2023 assess species
 for (i in 1:length(SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"])) {
   pos_drifts <- dat_final %>%
@@ -374,6 +408,7 @@ for (i in 1:length(SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "A
     kable_styling(latex_options = "striped") %>%
     column_spec(2, width = "1.7cm") %>%
     column_spec(3:12, width = "1.2cm") %>%
+    column_spec(10, width = "1.7cm") %>%
     landscape()
   )
   cat("\n\n<!-- -->\n\n")
@@ -385,19 +420,34 @@ for (i in 1:length(SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "A
 \FloatBarrier
 
 
-# Length information
+```{r otoliths, results = 'asis',warning = FALSE, message = FALSE}
+knitr::kable(
+  booktabs = T,
+  caption = "Total number of fish retained by monitoring group and year.",
+   species_lengths %>%
+   filter(Retained == 'TRUE',
+          Common.Name %in% spp_to_plot) %>%
+   left_join(., drifts_final) %>%
+    group_by(Common.Name, Monitoring.Group) %>%
+    tally() %>%
+    pivot_wider(id_cols = Common.Name, names_from = Monitoring.Group, values_from = n, values_fill = 0) %>%
+     rename(`Common Name` = Common.Name)
+) %>%
+  kable_styling(latex_options = "striped")
 
-The CCFRP measures every fish to the nearest centimeter and distributions of the lengths
-inside and outside the MPAs by MPA and species are in Figures xxxx.  Length data were 
-filtered to the drifts included in the final data set.
-
+```
 
 \FloatBarrier
 
-```{r , warning = FALSE, message = FALSE, echo=FALSE}
-#"Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF).",
+# Figures
 
-spp_to_plot <- SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"]
+```{r, fig-mpa-map, echo = FALSE, fig.cap = "Map of the State Marine Reserves (SMRs) monitored by the CCFRP program."}
+knitr::include_graphics('MPA_map.pdf')
+```
+
+
+```{r lengthplot, warning = FALSE, message = FALSE, echo=FALSE}
+#"Frequency of fork length (cm) for inside each MPA (MPA) and outside at reference areas (REF).",
 
 #create plot list
 plot_list = vector('list', length(spp_to_plot))
@@ -413,32 +463,50 @@ for(i in 1:length(spp_to_plot)){
     filter(Common.Name == spp_to_plot[i]) %>%
   group_by(Common.Name, Name, SITE) %>%
   summarise(n = n()) %>%
-   pivot_wider(id_cols = Name, names_from = SITE, values_from = n, values_fill = 0) %>%
-   mutate(Label = paste("MPA: N = ", MPA, "\n REF: N = ", REF)) %>%
-   select(Name, Label)
+   filter(n>19) %>%
+   pivot_wider(id_cols = Name, names_from = SITE, values_from = n, values_fill = NA) %>%
+   mutate(Label = paste("MPA: N = ", MPA, "\nREF: N = ", REF)) %>%
+   rename(MPA1 = MPA,
+          REF1 = REF)
  
 
- #join the labels to the dataframe
+ #join the labels to the dataframe and remove the rows with <20 in a site
  spp_length_plot_dat <- left_join(spp_length_plot_dat, length_counts)
+ spp_length_plot_dat <- spp_length_plot_dat %>%
+    filter((!is.na(MPA1) & SITE=='MPA') | (!is.na(REF1) & SITE=='REF')) %>%
+   droplevels()
+   
  
- #set x and y coordinates fr the labels
- o
+ #set x and y coordinates for the labels
+ # and number of columns
+# x_pos = c(15, 15, 5, 5)
+ y_pos = c(0.12, 0.11, 0.15, 0.1)
+ ncols = c(2, 3, 2, 2)
+ 
  
  
   plot_list[[i]]  <- local({
     i <- i
   p1 <- ggplot(aes(x = Length..cm., fill = SITE), data = spp_length_plot_dat) +
-  geom_histogram(aes(y =..density..), binwidth = 2, alpha=0.5, position = 'identity') +
+  geom_density(alpha=0.5) + #inherit.aes = FALSE, , trim = TRUE
     #scale_y_continuous(labels = scales::percent_format()) +
-     facet_wrap(~Name, ncol = 3) +
+     facet_wrap(~Name, ncol = ncols[i], dir = "v") + #, scale = "free_y", space = "free"
      scale_color_brewer(palette = "Dark2") +
     labs(
       x = "Fork length (cm)",
       y = "Density"
   ) +
+    scale_x_continuous(limit = c(0,60)) +
     theme_bw() +
-    theme(legend.title = element_blank()) +
-   geom_text(aes(x = 30, y = .4, label = Label), inherit.aes = FALSE, size = 2, family = "sans")
+    theme(axis.line = element_line(color='black'),
+    plot.background = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.title = element_blank()) +
+   geom_text(aes(x = 1, y = y_pos[i], label = Label), 
+             size = 2.5, family = "sans", #inherit.aes = FALSE, 
+             data = spp_length_plot_dat, check_overlap = TRUE,
+             hjust = 0)
         # print(p1)
 })
 }
@@ -449,7 +517,7 @@ names(plot_list) = spp_to_plot
 ```
 
 
-```{r fig-lengths, fig.cap = paste("Density of",names(plot_list), "by 2 cm fork length bins encountered inside each MPA and outside at reference areas (REF)."), echo=FALSE, results = "asis"}
+```{r lengths, fig.cap = paste("Density plot of",names(plot_list), "fork length bins encountered inside each MPA and outside at reference areas (REF) A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted."), echo=FALSE, warning= FALSE, results = "asis"}
 
 for(i in 1:length(plot_list)) {
      print(plot_list[[i]])
@@ -463,26 +531,7 @@ for(i in 1:length(plot_list)) {
 
 \FloatBarrier 
 
-# Available Otoliths
-The number of otoliths collected by university partner and year
 
 
-\FloatBarrier
 
-```{r otoliths, results = 'asis',warning = FALSE, message = FALSE}
-knitr::kable(
-  booktabs = T,
-  caption = "Total number of fish retained by monitoring group and year.",
-   catches %>%
-   filter(Retained == 'TRUE') %>%
-   left_join(., drifts_final) %>%
-    group_by(Common.Name, Monitoring.Group) %>%
-    tally() %>%
-    pivot_wider(id_cols = Common.Name, names_from = Monitoring.Group, values_from = n, values_fill = 0)
-) %>%
-  kable_styling(latex_options = "striped")
 
-```
-
-\clearpage
-\newpage
