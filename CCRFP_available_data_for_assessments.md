@@ -2,7 +2,7 @@
 title: "California Collaborative Fisheries Research Program"
 subtitle: "Data availability for stock assessments"
 author: "Compiled by Melissa H. Monk (SWFSC)"
-date: "May 09, 2022"
+date: "May 10, 2022"
 output:
   bookdown::pdf_document2: 
     keep_tex: true
@@ -36,30 +36,37 @@ always_allow_html: true
 
 # Summary
 This document summarizes the data from the California Collaborative 
-Fisheries Research Program (CCFRP) as well as the available data for the four 
-species proposed for stock assessments in 2023, including black rockfish (*Sebastes melanops*),
-copper rockfish (*S. caurinus*), quillback rockfish (*S. maliger*), and 
-yellowtail rockfish (*S. flavidus*).  Preliminary analyses suggest the following 
-data availability to inform stock assessments for each species:
+Fisheries Research Program (CCFRP), a survey that monitors groundfish populations 
+in California's network of Marine Protected Areas (MPAs) and adjacent reference areas. 
+Preliminary analyses suggest the following  data availability to inform stock 
+assessments for each species:
 
-**Black rockfish**: There are enough data to consider an index of abundance and also 
-include ages in the assessment model.    
+**Black rockfish (*Sebastes melanops*)**: There are enough data to consider an 
+index of abundance and also include ages in the assessment model north of Point
+Conception. An exploration of an index could be considered if California is 
+modeled as one area. Black rockfish are present in a high proportion of the fishing drops 
+at the one MPA north of the \CapeM management line. However, this area was added in 
+2017 and represents a shortened time series. There are likely enough otoliths available 
+to include ages in the assessment model if California is modeled as a single area, and to 
+inform growth externally north of \CapeM if the assessment is split at the management 
+boundary.
 
-**Copper rockfish**: There are enough data north of Point Conception to consider an 
-index of abundance.  The two MPAs south of Point Conception with consistent encounters 
+
+**Copper rockfish (*S. caurinus*)**: There are enough data north of Point Conception 
+to consider an index of abundance.  The two MPAs south of Point Conception with consistent encounters 
 of copper rockfish cover a very small fraction of the available habitat and were not 
 included in the original sampling design.  There are enough age data available north 
 of Point Conception for inclusion in an assessment model. Otoliths will be 
 collected south of Point Conception in 2022.  
 
-**Quillback rockfish**: There is only one MPA monitored north of the \CapeM management 
+**Quillback rockfish (*S. maliger*)**: There is only one MPA monitored north of the \CapeM management 
 boundary in California that was not part of the original sampling design and hence 
 does not have a long time series.  It is not likely that robust index can be developed
 from the sparse data separately north and south of \CapeM. An exploration of an index 
-could be considered if California is modeled as one area. Age data are available t
-hat could inform growth external to the assessment model.    
+could be considered if California is modeled as one area. Age data are available 
+that could inform growth external to the assessment model.    
 
-**Yellowtail rockfish**: There are enough data to consider an index of abundance north of 
+**Yellowtail rockfish  (*S. flavidus*)**: There are enough data to consider an index of abundance north of 
 Point Conception for yellowtail rockfish as well as include age data from the otoliths
 within the assessment model.
 
@@ -78,22 +85,18 @@ is a fishery-independent hook-and-line survey designed to monitor nearshore fish
 populations at a series of sampling locations both inside and adjacent to 
 California's network of MPAs. 
 
-The CCFRP survey began in 2007 with Cal Poly and Moss Landing Marine Labs 
-in collaboration with NMFS scientists and the fishing community.  The core 
+The CCFRP survey began in 2007 with  California Polytechnic University 
+San Luis Obispo (Cal Poly) and San Jose State University Moss Landing Marine Lab 
+(Moss Landing) in collaboration with NMFS scientists and the fishing community.  The core 
 area of the survey includes A&ntilde;o Nuevo SMR and Point Lobos SMR sampled by 
-San Jose State University Moss Landing Marine Lab, and Point Buchon SMR 
-and Piedras Blancas SMR sampled by California Polytechnic University 
-San Luis Obispo (Figure \@ref(fig:fig-mpa-map)). In 2017, CCFRP expanded within 
+Moss Landing, and Point Buchon SMR and Piedras Blancas SMR sampled by Cal Poly (Figure \@ref(fig:fig-mpa-map)). In 2017, CCFRP expanded within 
 California to include four additional partners, Cal Poly Humboldt (formerly Humboldt State 
 University), University of California Davis' Bodega Marine Lab, University 
 of California Santa Barbara, and the Scripps Institute of Oceanography. 
 The CCFRP now monitors 12 MPA and reference area pairs (Table \@ref(tab:monitoring)). 
 Cal Poly Humboldt samples the furthest north sites, which are south of Cape 
-Mendocino, but north of the management line at \CapeM. There are three nearshore 
-SMCAs north of Cape Mendocino that 
-were not selected for CCFRP monitoring due to historical sampling the tiers 
-assigned to the SMRs by CDFW. The COVID-19 pandemic also affected the 
-survey effort, but all partners were able to conduct sampling in 2000 and 2001.
+Mendocino, but north of the management line at \CapeM. The COVID-19 pandemic also affected the 
+survey effort, but all partners were able to conduct sampling in 2020 and 2021.
 
 The CCFRP survey design is consistent across all partners. Each MPA and reference 
 area consists of a number of 500 x 500 m cells that were selected because the contained 
@@ -138,27 +141,27 @@ Fishing drops that drifted outside a cell were also excluded.  These site filter
 result in an available 7910. The final filter removed 
 drifts within a cell that were not fished for at least ten minutes within a sampling 
 occasion, resulting in a total of 7889 fishing 
-drops available for analyses for stock assessments. The total nubmer of fish 
-encountered by CCFRP partner and the percent of positive drops by species and MPA
+drops available for analyses for stock assessments. The total number of fish 
+encountered by CCFRP partners and the percent of positive drops by species and MPA
 can be found in Tables \@ref(tab:totalfishbygroup) - \@ref(tab:percentpos).
 
 
 
 # Available Lengths and Otoliths
 
-The CCFRP measures every fish to the nearest centimeter and distributions of the 
-lengths inside and outside the MPAs by MPA and species are in Figures 
+The CCFRP measures every fish to the nearest centimeter. Distributions of fish 
+lengths inside and outside the MPAs are in Figures 
 \@ref(fig:lengths-1) - \@ref(fig:lengths-4).  Length data were 
-filtered to the drifts included in the final data set. Any species and MPA combination 
-with fewer than 20 observed fish in an MPA or reference area over the entirety 
-of the program were removed from the length plots.
+filtered to the drifts that would be used to develop indices of abaundacne. 
+Any species and site (MPA or reference) combination with fewer than 20 observed 
+fish over the entirety of the program were not plotted.
 
 The total number of fish retained by university partner can be found in Table 
-\@ref(tab:otoliths).  This represents that maximum number of available otoliths, 
-which will be verified once the stock assessments for 2023 are verified.  The 
+\@ref(tab:otoliths).  This represents the maximum number of available otoliths, 
+which will be verified once the stock assessments for 2023 are selected.  The 
 rule of thumb for including conditional age-at-length samples is a minimum of 30 
 available fish in a year/fleet stratum.  Given this, there are likely not enough 
-fish from Bodega or Cal Poly for any species. 
+fish from Bodega or Cal Poly to support conditional age-at-lengths for any species. 
 
 \FloatBarrier
 \newpage
@@ -290,7 +293,7 @@ Yellowtail Rockfish & 482 & 979 & 1828 & 1029 & 6 & 0\\
 
 \begin{landscape}\begin{table}
 
-\caption{(\#tab:percentpos)Percent of drifts with encounters of Black Rockfish in each at each monitoring location and yerar.}
+\caption{(\#tab:percentpos)Percent of drifts with encounters of Black Rockfish at each monitoring location (inside and outside araes combined) and year.}
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
@@ -324,7 +327,7 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuev
 
 \begin{landscape}\begin{table}
 
-\caption{(\#tab:percentpos)Percent of drifts with encounters of Copper Rockfish in each at each monitoring location and yerar.}
+\caption{(\#tab:percentpos)Percent of drifts with encounters of Copper Rockfish at each monitoring location (inside and outside araes combined) and year.}
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
@@ -358,7 +361,7 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuev
 
 \begin{landscape}\begin{table}
 
-\caption{(\#tab:percentpos)Percent of drifts with encounters of Quillback Rockfish in each at each monitoring location and yerar.}
+\caption{(\#tab:percentpos)Percent of drifts with encounters of Quillback Rockfish at each monitoring location (inside and outside araes combined) and year.}
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
@@ -392,7 +395,7 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuev
 
 \begin{landscape}\begin{table}
 
-\caption{(\#tab:percentpos)Percent of drifts with encounters of Yellowtail Rockfish in each at each monitoring location and yerar.}
+\caption{(\#tab:percentpos)Percent of drifts with encounters of Yellowtail Rockfish at each monitoring location (inside and outside araes combined) and year.}
 \centering
 \begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
 \toprule
@@ -429,7 +432,7 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuev
 
 \begin{table}
 
-\caption{(\#tab:otoliths)Total number of fish retained by monitoring group and year.}
+\caption{(\#tab:otoliths)Total number of fish retained by monitoring group over the duration of the program.}
 \centering
 \begin{tabular}[t]{lrrrr}
 \toprule
@@ -453,13 +456,13 @@ Yellowtail Rockfish & 120 & 36 & 19 & 13\\
 
 
 
-![(\#fig:lengths-1)Density plot of Black Rockfish fork length bins encountered inside each MPA and outside at reference areas (REF) A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-1.pdf) 
+![(\#fig:lengths-1)Density plot of Black Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-1.pdf) 
 
-![(\#fig:lengths-2)Density plot of Copper Rockfish fork length bins encountered inside each MPA and outside at reference areas (REF) A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-2.pdf) 
+![(\#fig:lengths-2)Density plot of Copper Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-2.pdf) 
 
-![(\#fig:lengths-3)Density plot of Quillback Rockfish fork length bins encountered inside each MPA and outside at reference areas (REF) A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-3.pdf) 
+![(\#fig:lengths-3)Density plot of Quillback Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-3.pdf) 
 
-![(\#fig:lengths-4)Density plot of Yellowtail Rockfish fork length bins encountered inside each MPA and outside at reference areas (REF) A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-4.pdf) 
+![(\#fig:lengths-4)Density plot of Yellowtail Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-4.pdf) 
 
 
 
