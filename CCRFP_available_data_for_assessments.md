@@ -2,7 +2,7 @@
 title: "California Collaborative Fisheries Research Program"
 subtitle: "Data availability for stock assessments"
 author: "Compiled by Melissa H. Monk (SWFSC)"
-date: "May 10, 2022"
+date: "May 11, 2022"
 output:
   bookdown::pdf_document2: 
     keep_tex: true
@@ -26,7 +26,7 @@ header-includes:
 always_allow_html: true
 ---
 
-\newcommand\CapeM{$40^\circ 10^\prime N$}
+\newcommand\CapeM{$40^\circ 10^\prime N. lat.$}
 
 
 
@@ -456,13 +456,13 @@ Yellowtail Rockfish & 120 & 36 & 19 & 13\\
 
 
 
-![(\#fig:lengths-1)Density plot of Black Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-1.pdf) 
+![(\#fig:lengths-1)Density plot of Black Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-1.pdf) 
 
-![(\#fig:lengths-2)Density plot of Copper Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-2.pdf) 
+![(\#fig:lengths-2)Density plot of Copper Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-2.pdf) 
 
-![(\#fig:lengths-3)Density plot of Quillback Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-3.pdf) 
+![(\#fig:lengths-3)Density plot of Quillback Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-3.pdf) 
 
-![(\#fig:lengths-4)Density plot of Yellowtail Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-4.pdf) 
+![(\#fig:lengths-4)Density plot of Yellowtail Rockfish fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017.](CCRFP_available_data_for_assessments_files/figure-latex/lengths-4.pdf) 
 
 
 

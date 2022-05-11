@@ -26,7 +26,7 @@ header-includes:
 always_allow_html: true
 ---
 
-\newcommand\CapeM{$40^\circ 10^\prime N$}
+\newcommand\CapeM{$40^\circ 10^\prime N. lat.$}
 
 ```{r load-packages, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -520,7 +520,7 @@ names(plot_list) = spp_to_plot
 ```
 
 
-```{r lengths, fig.cap = paste("Density plot of",names(plot_list), "fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Note: Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017."), echo=FALSE, warning= FALSE, results = "asis"}
+```{r lengths, fig.cap = paste("Density plot of",names(plot_list), "fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017."), echo=FALSE, warning= FALSE, results = "asis"}
 
 for(i in 1:length(plot_list)) {
      print(plot_list[[i]])
