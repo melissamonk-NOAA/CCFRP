@@ -187,6 +187,16 @@ dat_final <- dat %>%
 
 
 
+##Look at the number of cells fished per year
+cell_coverage <- dat_final %>% ungroup() %>%
+  dplyr::select(Trip.ID, Grid.Cell.ID, 
+                YEAR, Name, SITE) %>% unique
+
+test <- cell_coverage %>% filter(Name =="Point Buchon") %>%
+  droplevels()
+with(test, table(YEAR, Grid.Cell.ID, SITE))
+
+
 # Save
 save.image(file = "CCFRP_cleanedup.RData")
 

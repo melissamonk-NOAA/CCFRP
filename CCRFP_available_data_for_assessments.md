@@ -2,7 +2,7 @@
 title: "California Collaborative Fisheries Research Program"
 subtitle: "Data availability for stock assessments"
 author: "Compiled by Melissa H. Monk (SWFSC)"
-date: "May 11, 2022"
+date: "June 22, 2022"
 output:
   bookdown::pdf_document2: 
     keep_tex: true
@@ -280,83 +280,15 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuev
 \toprule
 Common.Name & Humboldt & Bodega & Moss Landing & Cal Poly & UCSB & Scripps\\
 \midrule
-\cellcolor{gray!6}{Black Rockfish} & \cellcolor{gray!6}{1296} & \cellcolor{gray!6}{1488} & \cellcolor{gray!6}{13272} & \cellcolor{gray!6}{1744} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{0}\\
-Copper Rockfish & 365 & 509 & 901 & 1008 & 2352 & 46\\
-\cellcolor{gray!6}{Quillback Rockfish} & \cellcolor{gray!6}{220} & \cellcolor{gray!6}{39} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0} & \cellcolor{gray!6}{0}\\
+\cellcolor{gray!6}{Gopher Rockfish} & \cellcolor{gray!6}{60} & \cellcolor{gray!6}{1543} & \cellcolor{gray!6}{11928} & \cellcolor{gray!6}{14604} & \cellcolor{gray!6}{492} & \cellcolor{gray!6}{303}\\
+Quillback Rockfish & 220 & 39 & 1 & 1 & 0 & 0\\
+\cellcolor{gray!6}{Vermilion Rockfish} & \cellcolor{gray!6}{221} & \cellcolor{gray!6}{369} & \cellcolor{gray!6}{1484} & \cellcolor{gray!6}{2723} & \cellcolor{gray!6}{271} & \cellcolor{gray!6}{98}\\
 Yellowtail Rockfish & 482 & 979 & 1828 & 1029 & 6 & 0\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 
-
-
-\begin{landscape}\begin{table}
-
-\caption{(\#tab:percentpos)Percent of drifts with encounters of Black Rockfish at each monitoring location (inside and outside araes combined) and year.}
-\centering
-\begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
-\toprule
-YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
-\midrule
-\cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{70\%} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{34\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2008 & - & - & - & - & 74\% & 24\% & 10\% & 46\% & - & - & - & -\\
-\cellcolor{gray!6}{2009} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{78\%} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2010 & - & - & - & - & 56\% & 6\% & 2\% & 8\% & - & - & - & -\\
-\cellcolor{gray!6}{2011} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{74\%} & \cellcolor{gray!6}{18\%} & \cellcolor{gray!6}{8\%} & \cellcolor{gray!6}{38\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-\addlinespace
-2012 & - & - & - & - & 82\% & 20\% & 14\% & 58\% & - & - & - & -\\
-\cellcolor{gray!6}{2013} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{88\%} & \cellcolor{gray!6}{28\%} & \cellcolor{gray!6}{32\%} & \cellcolor{gray!6}{52\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2014 & - & - & - & - & 84\% & 38\% & 28\% & 50\% & - & - & - & -\\
-\cellcolor{gray!6}{2015} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{86\%} & \cellcolor{gray!6}{50\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{40\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2016 & - & - & - & - & 86\% & 36\% & 22\% & 32\% & - & - & - & -\\
-\addlinespace
-\cellcolor{gray!6}{2017} & \cellcolor{gray!6}{54\%} & \cellcolor{gray!6}{22\%} & \cellcolor{gray!6}{50\%} & \cellcolor{gray!6}{38\%} & \cellcolor{gray!6}{76\%} & \cellcolor{gray!6}{18\%} & \cellcolor{gray!6}{4\%} & \cellcolor{gray!6}{24\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2018 & 46\% & 30\% & 56\% & 12\% & 70\% & 10\% & 2\% & 28\% & - & - & - & -\\
-\cellcolor{gray!6}{2019} & \cellcolor{gray!6}{44\%} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{56\%} & \cellcolor{gray!6}{36\%} & \cellcolor{gray!6}{68\%} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{4\%} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2020 & 44\% & 40\% & 46\% & 48\% & 66\% & - & 4\% & 8\% & - & - & - & -\\
-\cellcolor{gray!6}{2021} & \cellcolor{gray!6}{60\%} & \cellcolor{gray!6}{48\%} & \cellcolor{gray!6}{68\%} & \cellcolor{gray!6}{48\%} & \cellcolor{gray!6}{76\%} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{4\%} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-\bottomrule
-\end{tabular}
-\end{table}
-\end{landscape}
-
-
-<!-- -->
-
-
-\begin{landscape}\begin{table}
-
-\caption{(\#tab:percentpos)Percent of drifts with encounters of Copper Rockfish at each monitoring location (inside and outside araes combined) and year.}
-\centering
-\begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
-\toprule
-YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
-\midrule
-\cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2008 & - & - & - & - & 2\% & 16\% & 38\% & 10\% & - & - & - & -\\
-\cellcolor{gray!6}{2009} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{54\%} & \cellcolor{gray!6}{4\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2010 & - & - & - & - & 2\% & 22\% & 34\% & 6\% & - & - & - & -\\
-\cellcolor{gray!6}{2011} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{38\%} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-\addlinespace
-2012 & - & - & - & - & 8\% & 26\% & 44\% & 6\% & - & - & - & -\\
-\cellcolor{gray!6}{2013} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{12\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2014 & - & - & - & - & 6\% & 42\% & 54\% & 6\% & - & - & - & -\\
-\cellcolor{gray!6}{2015} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{34\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
-2016 & - & - & - & - & 8\% & 46\% & 46\% & 14\% & - & - & - & -\\
-\addlinespace
-\cellcolor{gray!6}{2017} & \cellcolor{gray!6}{22\%} & \cellcolor{gray!6}{24\%} & \cellcolor{gray!6}{22\%} & \cellcolor{gray!6}{32\%} & \cellcolor{gray!6}{4\%} & \cellcolor{gray!6}{38\%} & \cellcolor{gray!6}{46\%} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{98\%} & \cellcolor{gray!6}{38\%} & \cellcolor{gray!6}{12\%} & \cellcolor{gray!6}{20\%}\\
-2018 & 60\% & 24\% & 30\% & 24\% & 8\% & 44\% & 52\% & 22\% & 100\% & 36\% & 4\% & 8\%\\
-\cellcolor{gray!6}{2019} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{32\%} & \cellcolor{gray!6}{54\%} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{46\%} & \cellcolor{gray!6}{60\%} & \cellcolor{gray!6}{20\%} & \cellcolor{gray!6}{100\%} & \cellcolor{gray!6}{36\%} & \cellcolor{gray!6}{4\%} & \cellcolor{gray!6}{10\%}\\
-2020 & 34\% & 34\% & 28\% & 38\% & 2\% & 44\% & 56\% & 22\% & 98\% & 50\% & - & 10\%\\
-\cellcolor{gray!6}{2021} & \cellcolor{gray!6}{42\%} & \cellcolor{gray!6}{24\%} & \cellcolor{gray!6}{42\%} & \cellcolor{gray!6}{42\%} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{52\%} & \cellcolor{gray!6}{52\%} & \cellcolor{gray!6}{18\%} & \cellcolor{gray!6}{94\%} & \cellcolor{gray!6}{50\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{18\%}\\
-\bottomrule
-\end{tabular}
-\end{table}
-\end{landscape}
-
-
-<!-- -->
 
 
 \begin{landscape}\begin{table}
@@ -418,6 +350,74 @@ YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuev
 \cellcolor{gray!6}{2019} & \cellcolor{gray!6}{14\%} & \cellcolor{gray!6}{24\%} & \cellcolor{gray!6}{46\%} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{14\%} & \cellcolor{gray!6}{16\%} & \cellcolor{gray!6}{14\%} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{2\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
 2020 & 22\% & 46\% & 72\% & 4\% & 22\% & 14\% & 22\% & 10\% & 4\% & - & - & -\\
 \cellcolor{gray!6}{2021} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{42\%} & \cellcolor{gray!6}{78\%} & \cellcolor{gray!6}{18\%} & \cellcolor{gray!6}{28\%} & \cellcolor{gray!6}{34\%} & \cellcolor{gray!6}{16\%} & \cellcolor{gray!6}{32\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+<!-- -->
+
+
+\begin{landscape}\begin{table}
+
+\caption{(\#tab:percentpos)Percent of drifts with encounters of Vermilion Rockfish at each monitoring location (inside and outside araes combined) and year.}
+\centering
+\begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
+\toprule
+YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
+\midrule
+\cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{8\%} & \cellcolor{gray!6}{34\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{20\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2008 & - & - & - & - & 8\% & 18\% & 62\% & 26\% & - & - & - & -\\
+\cellcolor{gray!6}{2009} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{22\%} & \cellcolor{gray!6}{78\%} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2010 & - & - & - & - & 44\% & 24\% & 68\% & 28\% & - & - & - & -\\
+\cellcolor{gray!6}{2011} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{42\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{64\%} & \cellcolor{gray!6}{24\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+\addlinespace
+2012 & - & - & - & - & 32\% & 30\% & 64\% & 54\% & - & - & - & -\\
+\cellcolor{gray!6}{2013} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{38\%} & \cellcolor{gray!6}{36\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2014 & - & - & - & - & 26\% & 24\% & 56\% & 52\% & - & - & - & -\\
+\cellcolor{gray!6}{2015} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{36\%} & \cellcolor{gray!6}{50\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{48\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2016 & - & - & - & - & 26\% & 30\% & 70\% & 40\% & - & - & - & -\\
+\addlinespace
+\cellcolor{gray!6}{2017} & \cellcolor{gray!6}{20\%} & \cellcolor{gray!6}{14\%} & \cellcolor{gray!6}{28\%} & \cellcolor{gray!6}{18\%} & \cellcolor{gray!6}{30\%} & \cellcolor{gray!6}{36\%} & \cellcolor{gray!6}{64\%} & \cellcolor{gray!6}{42\%} & \cellcolor{gray!6}{18\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{16\%}\\
+2018 & 40\% & 14\% & 32\% & 6\% & 30\% & 42\% & 76\% & 60\% & 40\% & 8\% & - & 12\%\\
+\cellcolor{gray!6}{2019} & \cellcolor{gray!6}{26\%} & \cellcolor{gray!6}{22\%} & \cellcolor{gray!6}{44\%} & \cellcolor{gray!6}{14\%} & \cellcolor{gray!6}{44\%} & \cellcolor{gray!6}{44\%} & \cellcolor{gray!6}{72\%} & \cellcolor{gray!6}{62\%} & \cellcolor{gray!6}{34\%} & \cellcolor{gray!6}{10\%} & \cellcolor{gray!6}{12\%} & \cellcolor{gray!6}{30\%}\\
+2020 & 34\% & 10\% & 40\% & 28\% & 28\% & 32\% & 72\% & 48\% & 40\% & 14\% & - & 28\%\\
+\cellcolor{gray!6}{2021} & \cellcolor{gray!6}{34\%} & \cellcolor{gray!6}{22\%} & \cellcolor{gray!6}{44\%} & \cellcolor{gray!6}{24\%} & \cellcolor{gray!6}{42\%} & \cellcolor{gray!6}{28\%} & \cellcolor{gray!6}{64\%} & \cellcolor{gray!6}{46\%} & \cellcolor{gray!6}{52\%} & \cellcolor{gray!6}{6\%} & \cellcolor{gray!6}{8\%} & \cellcolor{gray!6}{26\%}\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+<!-- -->
+
+
+\begin{landscape}\begin{table}
+
+\caption{(\#tab:percentpos)Percent of drifts with encounters of Gopher Rockfish at each monitoring location (inside and outside araes combined) and year.}
+\centering
+\begin{tabular}[t]{r>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.2cm}l}
+\toprule
+YEAR & South Cape Mendocino & Ten Mile & Stewarts Point & Bodega Head & Ano Nuevo & Point Lobos & Piedras Blancas & Point Buchon & Carrington Point & Anacapa Island & Swamis & South La Jolla\\
+\midrule
+\cellcolor{gray!6}{2007} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{46\%} & \cellcolor{gray!6}{88\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{96\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2008 & - & - & - & - & 70\% & 80\% & 98\% & 98\% & - & - & - & -\\
+\cellcolor{gray!6}{2009} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{70\%} & \cellcolor{gray!6}{96\%} & \cellcolor{gray!6}{98\%} & \cellcolor{gray!6}{94\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2010 & - & - & - & - & 76\% & 96\% & 90\% & 98\% & - & - & - & -\\
+\cellcolor{gray!6}{2011} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{70\%} & \cellcolor{gray!6}{94\%} & \cellcolor{gray!6}{88\%} & \cellcolor{gray!6}{92\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+\addlinespace
+2012 & - & - & - & - & 84\% & 84\% & 92\% & 88\% & - & - & - & -\\
+\cellcolor{gray!6}{2013} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{36\%} & \cellcolor{gray!6}{60\%} & \cellcolor{gray!6}{84\%} & \cellcolor{gray!6}{72\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2014 & - & - & - & - & 56\% & 86\% & 90\% & 86\% & - & - & - & -\\
+\cellcolor{gray!6}{2015} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{62\%} & \cellcolor{gray!6}{92\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{88\%} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{-}\\
+2016 & - & - & - & - & 70\% & 96\% & 88\% & 96\% & - & - & - & -\\
+\addlinespace
+\cellcolor{gray!6}{2017} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{8\%} & \cellcolor{gray!6}{64\%} & \cellcolor{gray!6}{56\%} & \cellcolor{gray!6}{70\%} & \cellcolor{gray!6}{98\%} & \cellcolor{gray!6}{86\%} & \cellcolor{gray!6}{96\%} & \cellcolor{gray!6}{50\%} & \cellcolor{gray!6}{24\%} & \cellcolor{gray!6}{18\%} & \cellcolor{gray!6}{70\%}\\
+2018 & - & 8\% & 68\% & 48\% & 58\% & 98\% & 86\% & 92\% & 62\% & 24\% & 18\% & 48\%\\
+\cellcolor{gray!6}{2019} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{8\%} & \cellcolor{gray!6}{70\%} & \cellcolor{gray!6}{70\%} & \cellcolor{gray!6}{74\%} & \cellcolor{gray!6}{96\%} & \cellcolor{gray!6}{92\%} & \cellcolor{gray!6}{100\%} & \cellcolor{gray!6}{44\%} & \cellcolor{gray!6}{16\%} & \cellcolor{gray!6}{12\%} & \cellcolor{gray!6}{44\%}\\
+2020 & 2\% & 16\% & 76\% & 68\% & 68\% & 92\% & 80\% & 100\% & 70\% & 8\% & 16\% & 48\%\\
+\cellcolor{gray!6}{2021} & \cellcolor{gray!6}{-} & \cellcolor{gray!6}{20\%} & \cellcolor{gray!6}{88\%} & \cellcolor{gray!6}{78\%} & \cellcolor{gray!6}{92\%} & \cellcolor{gray!6}{98\%} & \cellcolor{gray!6}{86\%} & \cellcolor{gray!6}{98\%} & \cellcolor{gray!6}{60\%} & \cellcolor{gray!6}{22\%} & \cellcolor{gray!6}{14\%} & \cellcolor{gray!6}{46\%}\\
 \bottomrule
 \end{tabular}
 \end{table}

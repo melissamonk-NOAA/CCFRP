@@ -56,10 +56,12 @@ load("CCFRP_cleanedup.RData")
 
 Assess2023 <- data.frame(
   Species = c(
-    "Black Rockfish",
-    "Copper Rockfish",
+#    "Black Rockfish",
+#    "Copper Rockfish",
     "Quillback Rockfish",
-    "Yellowtail Rockfish"
+    "Yellowtail Rockfish",
+    "Vermilion Rockfish",
+    "Gopher Rockfish"
   ),
   AssessGroup = "Assess2023"
 )
@@ -387,7 +389,7 @@ drifts_by_MPA <- dat_final %>%
 
 ```{r percentpos, results = 'asis',warning = FALSE, message = FALSE}
 # calculate the number of positive drifts by each of the 2023 assess species
-for (i in 1:length(SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"])) {
+for (i in 1:length(SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"])) { # nolint
   pos_drifts <- dat_final %>%
     filter(Common.Name %in% SpeciesOfInterest$Species[SpeciesOfInterest$AssessGroup == "Assess2023"][i]) %>%
     select(Drift.ID, YEAR, Monitoring.Group, Name) %>%
@@ -456,7 +458,7 @@ knitr::include_graphics('MPA_map.pdf')
 plot_list = vector('list', length(spp_to_plot))
 
 
-for(i in 1:length(spp_to_plot)){
+for(i in 1:length(spp_to_plot)){ # nolint
  #subset to the species
   spp_length_plot_dat = species_lengths %>%
      dplyr::filter(Common.Name == spp_to_plot[i])
@@ -483,8 +485,8 @@ for(i in 1:length(spp_to_plot)){
  #set x and y coordinates for the labels
  # and number of columns
 # x_pos = c(15, 15, 5, 5)
- y_pos = c(0.12, 0.11, 0.15, 0.1)
- ncols = c(2, 3, 2, 2)
+ y_pos = c(0.12, 0.11, 0.1, 0.1, 0.1, 0.1)
+ ncols = c(2, 3, 2, 2, 2, 2)
  
  
  
@@ -522,7 +524,7 @@ names(plot_list) = spp_to_plot
 
 ```{r lengths, fig.cap = paste("Density plot of",names(plot_list), "fork lengths form fish encountered inside each MPA and outside at reference areas (REF) over all years of the program. A sample size of NA indicates fewer than 20 fish were encountered in that MPA stratum and were not plotted. Areas north of Ano Nuevo and south of Point Buchon were sampled beginning in 2017."), echo=FALSE, warning= FALSE, results = "asis"}
 
-for(i in 1:length(plot_list)) {
+for(i in 1:length(plot_list)) { # nolint
      print(plot_list[[i]])
     cat('\n\n')
 }
