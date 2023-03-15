@@ -12,8 +12,8 @@ The California Collaborative Fisheries Research Program (CCFRP) is the only stat
 
 **Total Length**: Scripps (SIO), University of California Santa Barbara (UCSB) and Moss Landing Marine Labs (MLML) measure total length, 
 allowing the caudal fin to splay naturally.        
-**Fork Lengths**: Cal Poly (CP) and University of California Davis Bodega Marine Lab (BML) measure fork length.       
-**Total and pinched tail lengths**: Cal Poly Humboldt, formerly Humboldt State University (HSU) pinches the tail for species with a forked tail and 
+**Fork Length**: Cal Poly (CP) and University of California Davis Bodega Marine Lab (BML) measure fork length.       
+**Total and Pinched Tail Length**: Cal Poly Humboldt, formerly Humboldt State University (HSU) pinches the tail for species with a forked tail and 
 takes natural splay/total length for fan tailed species. Awaiting a list of species for each measurement type from HSU.    
 
 
